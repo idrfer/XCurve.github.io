@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Doc-Dataset</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Around - Multipurpose Bootstrap Template">
+    <meta name="keywords" content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Createx Studio">
+    <!-- Viewport-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 100);
+        };
+      })();
+      
+    </script>
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+    <!-- Code Theme Styles -->
+    <link rel="stylesheet" media="screen" href="css/code.css">
+    <link rel="stylesheet" media="screen" href="css/prism.css">
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+  </head>
+  <!-- Body-->
+  <body class="is-sidebar">
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+    <main class="page-wrapper">
+      <!-- Navbar (Solid background + shadow)-->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
+        <div class="navbar-search bg-light">
+          <div class="container d-flex flex-nowrap align-items-center"><i class="ai-search fs-xl"></i>
+            <input class="form-control form-control-xl navbar-search-field" type="text" placeholder="Search site">
+            <div class="d-flex align-items-center"><span class="text-muted fs-xs mt-1 d-none d-sm-inline">Close</span>
+              <button class="btn-close p-2" type="button" data-bs-toggle="search"></button>
+            </div>
+          </div>
+        </div>
+        <div class="container px-0 px-xl-3">
+          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html"><img class="d-none d-lg-block" src="img/logo/Xcurve-logo.png" alt="XCurve" width="153"><img class="d-lg-none" src="img/logo/Xcurve-logo.png" alt="XCurve" width="58"></a>
+          <!--<div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="demo-personal-portfolio.html#modal-contact" data-bs-toggle="modal">Contact Us</a><a class="btn btn-sm btn-primary d-lg-none d-inline-block" href="demo-personal-portfolio.html#modal-contact" data-bs-toggle="modal">Contact Us</a></div>-->
+          <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+            <div class="offcanvas-header navbar-shadow">
+              <h5 class="mt-1 mb-0">Menu</h5>
+              <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Menu-->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="index.html">Get Started</a>
+                </li>
+                <li class="nav-item dropdown dropdown-mega"><a class="nav-link dropdown-toggle" href="tutorials.html">Documentation</a>
+                </li>
+                <!--<li class="nav-item dropdown dropdown-mega active"><a class="nav-link dropdown-toggle" href="doc_dataset.html">Documentation</a>
+                </li>-->
+                <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Benchmarks</a> -->
+                  <!-- <ul class="dropdown-menu">
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Research</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="dashboard-orders.html">Our Researchs</a></li>
+                        <li><a class="dropdown-item" href="dashboard-sales.html">Our Code</a></li>
+                        <li><a class="dropdown-item" href="dashboard-messages.html">Lastest Messages</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="signin-illustration.html">Datasets</a></li>
+                    <li><a class="dropdown-item" href="signin-signup.html">Others</a></li>
+                  </ul> -->
+                <!-- </li> -->
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="datasets.html">Datasets</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="research.html">Research</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="about.html">Team</a>
+                  <!-- <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="about.html">About</a></li> -->
+                    <!-- <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Github</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="contacts-v1.html">Contacts v.1</a></li>
+                        <li><a class="dropdown-item" href="contacts-v2.html">Contacts v.2</a></li>
+                        <li><a class="dropdown-item" href="contacts-v3.html">Contacts v.3</a></li>
+                      </ul>
+                    </li> -->
+                    <!-- <li><a class="dropdown-item" href="lastest_news.html#">Latest News</a></li>
+                  </ul> -->
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="lastest_news.html">Latest News</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="https://github.com/statusrank/XCurve" data-bs-toggle="dropdown">Github</a>
+                  <ul class="dropdown-menu">
+                    <!--<li><a class="dropdown-item" href="https://github.com/statusrank/XCurve/blob/master/README.md">
+                        <div class="d-flex align-items-center">
+                          <div class="fs-xl text-muted"><i class="ai-file-text"></i></div>
+                          <div class="ps-3"><span class="d-block text-heading">Documentation</span><small class="d-block text-muted">Kick-start customization</small></div>
+                        </div></a></li>-->
+                    <li class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="docs/changelog.html">
+                        <div class="d-flex align-items-center">
+                          <div class="fs-xl text-muted"><i class="ai-edit"></i></div>
+                          <div class="ps-3"><span class="d-block text-heading">Changelog<span class="badge bg-success ms-2">v2.4.0</span></span><small class="d-block text-muted">Regular updates</small></div>
+                        </div></a></li>
+                  </ul>
+                </li>
+                
+              </ul>
+            </div>
+            <div class="offcanvas-footer"><a class="btn d-block w-100 btn-primary" href="demo-personal-portfolio.html#modal-contact" data-bs-toggle="modal">Contact Us</a></div>
+          </div>
+        </div>
+      </header>
+      <!-- Page content-->
+      <div class="sidebar-enabled">
+        <div class="container">
+          <div class="row">
+            <!-- Sidebar-->
+            <div class="sidebar col-lg-3 pt-lg-5">
+              <div class="offcanvas offcanvas-collapse" id="help-sidebar">
+                <div class="offcanvas-header navbar-shadow mb-3">
+                  <h5 class="mt-1 mb-0">Sidebar</h5>
+                  <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body pt-3 pt-lg-0 ps-lg-0 pe-lg-2 pe-xl-4" data-simplebar>
+                  <!-- Search widget-->
+                  <div class="widget mb-5">
+                    <h3 class="widget-title">Search documentation</h3>
+                    <div class="input-group"><i class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                      <input class="form-control rounded" type="text" placeholder="Search">
+                    </div>
+                  </div>
+                  <!-- Related articles-->
+                  <div class="widget mb-5">
+                    
+                    <h3 class="widget-title">Basic documentation</h3>
+                    <ul>
+                      <li>
+                        <div class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i><a class="widget-link" href="doc_dataset.html">Dataset</a></div>
+                        <ul>
+                          <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i>
+                            <a class="widget-link" href="#DatasetRaw">DatasetRaw</a>
+                          </li>
+                          <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i>
+                            <a class="widget-link" href="#DatasetFile">DatasetFile</a>
+                          </li>
+                          <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i>
+                            <a class="widget-link" href="#StratifiedSampler">StratifiedSampler</a>
+                          </li>
+                          <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i>
+                            <a class="widget-link" href="#get_datasets">get_datasets</a>
+                          </li>
+                          <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i>
+                            <a class="widget-link" href="#get_data_loaders">get_data_loaders</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i><a class="widget-link" href="doc_model.html">Model</a></li>
+                      <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i>
+                        <a class="widget-link" href="doc_loss.html">Loss</a>
+                      </li>
+                      <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i><a class="widget-link" href="doc_optimizer.html">Optimizer</a></li>
+                      <li class="d-flex"><i class="ai-book text-muted mt-2 me-2"></i><a class="widget-link" href="doc_metrics.html">Metrics</a></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-9 content py-4">
+              <nav aria-label="breadcrumb">
+                <ol class="py-1 my-2 breadcrumb">
+                  <li class="breadcrumb-item"><a href="tutorials.html">Basic Documentation</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Dataset</li>
+                </ol>
+              </nav>
+              <!-- Page title-->
+              <div class="d-md-flex justify-content-between pb-2 mb-4">
+                <h1 class="me-3" style="max-width: 38rem;">Documentation for dataset</h1><span class="fs-sm text-muted text-md-nowrap pt-2">Posted on May 31, 2022</span>
+              </div>
+              <!-- Content-->
+              <a name="DatasetRaw"></a>
+              <table class="table">
+                <thead>
+                  <caption align="top" style="text-align:center; font-size: 20px;"><code><strong>DatasetRaw</strong></code></caption> 
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Parameter</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Default</th>
+                    <th scope="col">Interpretation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>data</td>
+                    <td>torch.tensor</td>
+                    <td>None</td>
+                    <td>The raw data of dataset.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>targets</td>
+                    <td>torch.tensor</td>
+                    <td>None</td>
+                    <td>The labels of dataset.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>split</td>
+                    <td>String</td>
+                    <td>"train"</td>
+                    <td>The way of split.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>input_size</td>
+                    <td>Int</td>
+                    <td>224</td>
+                    <td>The input size of data.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>norm_params</td>
+                    <td>Dict: {"mean": List, "std": List}</td>
+                    <td>None</td>
+                    <td>The parameters of normalization.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>resampler_type</td>
+                    <td>String</td>
+                    <td>"None"</td>
+                    <td>"None", "TL", "LHT", "NM", "BS", "ADA".</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>load_data_from_file</td>
+                    <td>Bool</td>
+                    <td>False</td>
+                    <td>Whether load data from files in the disk.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>lmdb_dir</td>
+                    <td>String</td>
+                    <td>None</td>
+                    <td>The location of imdb.</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Return</th>
+                    <th scope="col">Type</th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Dataset</td>
+                    <td>XCurve.AUROC.data.dataset.DatasetRaw</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                </tfoot>
+              </table>
+<article class="markdown-body"><pre><code class="fenced-code-block"><span class="token keyword">from</span> XCurve<span class="token punctuation">.</span>AUROC<span class="token punctuation">.</span>dataloaders <span class="token keyword">import</span> DatasetRaw
+<span class="token keyword">import</span> torch
+
+data <span class="token operator">=</span> torch<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> torch<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+dataset <span class="token operator">=</span> DatasetRaw<span class="token punctuation">(</span>
+    data <span class="token operator">=</span> data<span class="token punctuation">,</span>
+    target <span class="token operator">=</span> target<span class="token punctuation">,</span>
+    split <span class="token operator">=</span> <span class="token string">"train"</span><span class="token punctuation">,</span>
+    input_size <span class="token operator">=</span> <span class="token number">224</span><span class="token punctuation">,</span>
+    norm_params <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"mean"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">123.675</span><span class="token punctuation">,</span> <span class="token number">116.280</span><span class="token punctuation">,</span> <span class="token number">103.530</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"std"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">58.395</span><span class="token punctuation">,</span> <span class="token number">57.120</span><span class="token punctuation">,</span> <span class="token number">57.375</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    resampler_type <span class="token operator">=</span> <span class="token string">"None"</span><span class="token punctuation">,</span>
+    load_data_from_file <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+    imdb_dir <span class="token operator">=</span> <span class="token boolean">None</span>
+<span class="token punctuation">)</span></code></pre>
+</article>
+              <a name="DatasetFile"></a>
+              <table class="table">
+                <thead>
+                  <caption align="top" style="text-align:center; font-size: 20px;"><code><strong>DatasetFile</strong></code></caption> 
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Parameter</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Default</th>
+                    <th scope="col">Interpretation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>args</td>
+                    <td>Dict</td>
+                    <td>None</td>
+                    <td>The configuration of dataset.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.1</th>
+                    <td>args["data_dir"]</td>
+                    <td>String</td>
+                    <td>None</td>
+                    <td>The data storage directory.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.2</th>
+                    <td>args["input_size"]</td>
+                    <td>List: [int: width, int: height]</td>
+                    <td>None</td>
+                    <td>Width and height are size of input image.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.3</th>
+                    <td>args["norm_params"]</td>
+                    <td>Dict: {"mean": List, "std": List}</td>
+                    <td>None</td>
+                    <td>The parameters of normalization.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.4</th>
+                    <td>args["use_lmdb"]</td>
+                    <td>Bool</td>
+                    <td>None</td>
+                    <td>Whether the lmdb type is used.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.5</th>
+                    <td>args["resampler_type"]</td>
+                    <td>String</td>
+                    <td>"None"</td>
+                    <td>"None", "TL", "LHT", "NM", "BS", "ADA".</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.6</th>
+                    <td>args["sampler"]</td>
+                    <td>Dict: {"rpos": (int: r1), "rneg": (int: r2)}</td>
+                    <td>None</td>
+                    <td>The ratio of positive and negative instances.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.7</th>
+                    <td>args["npy_style"]</td>
+                    <td>Bool</td>
+                    <td>None</td>
+                    <td>Whether the raw data is stored in .npy format.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.8</th>
+                    <td>args["aug"]</td>
+                    <td>Bool</td>
+                    <td>None</td>
+                    <td>Whether the aug operation is used.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.9</th>
+                    <td>args["class2id"]</td>
+                    <td>Dict: {"id1": 1,"id2": 1}</td>
+                    <td>None</td>
+                    <td>The category id with a value of 1 is choosen as the positive.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>split</td>
+                    <td>String</td>
+                    <td>"train"</td>
+                    <td>The way of split.</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Return</th>
+                    <th scope="col">Type</th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Dataset</td>
+                    <td>XCurve.AUROC.data.dataset.DatasetFile</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                </tfoot>
+              </table>
+<article class="markdown-body"><pre><code class="fenced-code-block"><span class="token keyword">from</span> XCurve<span class="token punctuation">.</span>AUROC<span class="token punctuation">.</span>dataloaders <span class="token keyword">import</span> DatasetFile
+<span class="token keyword">from</span> easydict <span class="token keyword">import</span> EasyDict <span class="token keyword">as</span> edict
+
+args <span class="token operator">=</span> edict<span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token string">"data_dir"</span><span class="token punctuation">:</span> <span class="token string">"XCurve/AUROC/data/cifar-10-long-tail"</span><span class="token punctuation">,</span>
+    <span class="token string">"input_size"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"norm_params"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"mean"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">123.675</span><span class="token punctuation">,</span> <span class="token number">116.280</span><span class="token punctuation">,</span> <span class="token number">103.530</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"std"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">58.395</span><span class="token punctuation">,</span> <span class="token number">57.120</span><span class="token punctuation">,</span> <span class="token number">57.375</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"use_lmdb"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+    <span class="token string">"resampler_type"</span><span class="token punctuation">:</span> <span class="token string">"None"</span><span class="token punctuation">,</span>
+    <span class="token string">"sampler"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"rpos"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string">"rneg"</span><span class="token punctuation">:</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"npy_style"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+    <span class="token string">"aug"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span> 
+    <span class="token string">"class2id"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"0"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"3"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"4"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token string">"5"</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"6"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"7"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"8"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"9"</span><span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+train_set <span class="token operator">=</span> DatasetFile<span class="token punctuation">(</span>args<span class="token punctuation">,</span> <span class="token string">"train"</span><span class="token punctuation">)</span>
+val_set <span class="token operator">=</span> DatasetFile<span class="token punctuation">(</span>args<span class="token punctuation">,</span> <span class="token string">"test"</span><span class="token punctuation">)</span>
+test_set <span class="token operator">=</span> DatasetFile<span class="token punctuation">(</span>args<span class="token punctuation">,</span> <span class="token string">"val"</span><span class="token punctuation">)</span>
+
+</code></pre>
+</article>
+              <a name="StratifiedSampler"></a>
+              <table class="table">
+                <thead>
+                  <caption align="top" style="text-align:center; font-size: 20px;"><code><strong>StratifiedSampler</strong></code></caption> 
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Parameter</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Default</th>
+                    <th scope="col">Interpretation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>class_vector</td>
+                    <td>torch.tensor</td>
+                    <td>None</td>
+                    <td>The vector of labels.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>batch_size</td>
+                    <td>Int</td>
+                    <td>None</td>
+                    <td>The batch size of sampler.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>rpos</td>
+                    <td>Int</td>
+                    <td>1</td>
+                    <td>The radio of positive class.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>rneg</td>
+                    <td>Int</td>
+                    <td>4</td>
+                    <td>The radio of negative class.</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Return</th>
+                    <th scope="col">Type</th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>Dataset</td>
+                    <td>XCurve.AUROC.data.sampler.StratifiedSampler</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                </tfoot>
+              </table>
+<article class="markdown-body"><pre><code class="fenced-code-block"><span class="token keyword">from</span> XCurve<span class="token punctuation">.</span>AUROC<span class="token punctuation">.</span>dataloaders <span class="token keyword">import</span> DatasetRaw
+<span class="token keyword">import</span> torch
+
+data <span class="token operator">=</span> torch<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+target <span class="token operator">=</span> torch<span class="token punctuation">.</span>zeros<span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token number">1000</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+dataset <span class="token operator">=</span> DatasetRaw<span class="token punctuation">(</span>
+    data <span class="token operator">=</span> data<span class="token punctuation">,</span>
+    target <span class="token operator">=</span> target<span class="token punctuation">,</span>
+    split <span class="token operator">=</span> <span class="token string">"train"</span><span class="token punctuation">,</span>
+    input_size <span class="token operator">=</span> <span class="token number">224</span><span class="token punctuation">,</span>
+    norm_params <span class="token operator">=</span> <span class="token punctuation">{</span>
+        <span class="token string">"mean"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">123.675</span><span class="token punctuation">,</span> <span class="token number">116.280</span><span class="token punctuation">,</span> <span class="token number">103.530</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"std"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">58.395</span><span class="token punctuation">,</span> <span class="token number">57.120</span><span class="token punctuation">,</span> <span class="token number">57.375</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    resampler_type <span class="token operator">=</span> <span class="token string">"None"</span><span class="token punctuation">,</span>
+    load_data_from_file <span class="token operator">=</span> <span class="token boolean">False</span><span class="token punctuation">,</span>
+    imdb_dir <span class="token operator">=</span> <span class="token boolean">None</span>
+<span class="token punctuation">)</span></code></pre>
+</article>
+              <a name="get_datasets"></a>
+              <table class="table">
+                <thead>
+                  <caption align="top" style="text-align:center; font-size: 20px;"><code><strong>get_datasets</strong></code></caption> 
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Parameter</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Default</th>
+                    <th scope="col">Interpretation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>args</td>
+                    <td>Dict</td>
+                    <td>None</td>
+                    <td>The configuration of dataset.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.1</th>
+                    <td>args["data_dir"]</td>
+                    <td>String</td>
+                    <td>None</td>
+                    <td>The data storage directory.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.2</th>
+                    <td>args["input_size"]</td>
+                    <td>List: [int: width, int: height]</td>
+                    <td>None</td>
+                    <td>Width and height are size of input image.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.3</th>
+                    <td>args["norm_params"]</td>
+                    <td>Dict: {"mean": List, "std": List}</td>
+                    <td>None</td>
+                    <td>The parameters of normalization.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.4</th>
+                    <td>args["use_lmdb"]</td>
+                    <td>Bool</td>
+                    <td>None</td>
+                    <td>Whether the lmdb type is used.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.5</th>
+                    <td>args["resampler_type"]</td>
+                    <td>String</td>
+                    <td>"None"</td>
+                    <td>"None", "TL", "LHT", "NM", "BS", "ADA".</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.6</th>
+                    <td>args["sampler"]</td>
+                    <td>Dict: {"rpos": (int: r1), "rneg": (int: r2)}</td>
+                    <td>None</td>
+                    <td>The ratio of positive and negative instances.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.7</th>
+                    <td>args["npy_style"]</td>
+                    <td>Bool</td>
+                    <td>None</td>
+                    <td>Whether the raw data is stored in .npy format.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.8</th>
+                    <td>args["aug"]</td>
+                    <td>Bool</td>
+                    <td>None</td>
+                    <td>Whether the aug operation is used.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">1.9</th>
+                    <td>args["class2id"]</td>
+                    <td>Dict: {"id1": 1,"id2": 1}</td>
+                    <td>None</td>
+                    <td>The category id with a value of 1 is choosen as the positive.</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Return</th>
+                    <th scope="col">Type</th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>train_set</td>
+                    <td>XCurve.AUROC.data.dataset.Dataset</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>test_set</td>
+                    <td>XCurve.AUROC.data.dataset.Dataset</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>                  <tr>
+                    <th scope="row">3</th>
+                    <td>val_set</td>
+                    <td>XCurve.AUROC.data.dataset.Dataset</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                </tfoot>
+              </table>
+<article class="markdown-body"><pre><code class="fenced-code-block"><span class="token keyword">from</span> XCurve<span class="token punctuation">.</span>AUROC<span class="token punctuation">.</span>dataloaders <span class="token keyword">import</span> get_datasets
+<span class="token keyword">from</span> easydict <span class="token keyword">import</span> EasyDict <span class="token keyword">as</span> edict
+
+args <span class="token operator">=</span> edict<span class="token punctuation">({</span>
+    <span class="token string">"data_dir"</span><span class="token punctuation">:</span> <span class="token string">"XCurve/AUROC/data/cifar-10-long-tail"</span><span class="token punctuation">,</span>
+    <span class="token string">"input_size"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"norm_params"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"mean"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">123.675</span><span class="token punctuation">,</span> <span class="token number">116.280</span><span class="token punctuation">,</span> <span class="token number">103.530</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"std"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">58.395</span><span class="token punctuation">,</span> <span class="token number">57.120</span><span class="token punctuation">,</span> <span class="token number">57.375</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"use_lmdb"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+    <span class="token string">"resampler_type"</span><span class="token punctuation">:</span> <span class="token string">"None"</span><span class="token punctuation">,</span>
+    <span class="token string">"sampler"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"rpos"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string">"rneg"</span><span class="token punctuation">:</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"npy_style"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+    <span class="token string">"aug"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span> 
+    <span class="token string">"class2id"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"0"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"3"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"4"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token string">"5"</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"6"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"7"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"8"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"9"</span><span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">})</span>
+
+train_set<span class="token punctuation">,</span> val_set<span class="token punctuation">,</span> test_set <span class="token operator">=</span> get_datasets<span class="token punctuation">(</span>args<span class="token punctuation">)</span></code></pre>
+</article>
+              <a name="get_data_loaders"></a>
+              <table class="table">
+                <thead>
+                  <caption align="top" style="text-align:center; font-size: 20px;"><code><strong>get_data_loaders</strong></code></caption> 
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Parameter</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Default</th>
+                    <th scope="col">Interpretation</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>train_set</td>
+                    <td>XCurve.data.dataset.Dataset</td>
+                    <td>None</td>
+                    <td>The training dataset.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>test_set</td>
+                    <td>XCurve.data.dataset.Dataset</td>
+                    <td>None</td>
+                    <td>The testing dataset.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">3</th>
+                    <td>val_set</td>
+                    <td>XCurve.data.dataset.Dataset</td>
+                    <td>None</td>
+                    <td>The validation dataset.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>train_batch_size</td>
+                    <td>Int</td>
+                    <td>None</td>
+                    <td>The batch size of training dataloader.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">4</th>
+                    <td>test_batch_size</td>
+                    <td>Int</td>
+                    <td>None</td>
+                    <td>The batch size of testing dataloader.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">5</th>
+                    <td>num_workers</td>
+                    <td>Int</td>
+                    <td>4</td>
+                    <td>The process number of data loading.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">6</th>
+                    <td>rpos</td>
+                    <td>Int</td>
+                    <td>1</td>
+                    <td>Proportion of positive samples.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">7</th>
+                    <td>rneg</td>
+                    <td>Int</td>
+                    <td>4</td>
+                    <td>Proportion of negative samples.</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">8</th>
+                    <td>random_state</td>
+                    <td>Int</td>
+                    <td>1234</td>
+                    <td>The random_state of dataloaders.</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Return</th>
+                    <th scope="col">Type</th>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                  <tr>
+                    <th scope="row">1</th>
+                    <td>train_loader</td>
+                    <td>torch.utils.data.DataLoader</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                  <tr>
+                    <th scope="row">2</th>
+                    <td>test_loader</td>
+                    <td>torch.utils.data.DataLoader</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>                  <tr>
+                    <th scope="row">3</th>
+                    <td>val_loader</td>
+                    <td>torch.utils.data.DataLoader</td>
+                    <th scope="col"> </th>
+                    <th scope="col"> </th>
+                  </tr>
+                </tfoot>
+              </table>
+<article class="markdown-body"><pre><code class="fenced-code-block"><span class="token keyword">from</span> XCurve<span class="token punctuation">.</span>AUROC<span class="token punctuation">.</span>dataloaders <span class="token keyword">import</span> get_datasets
+<span class="token keyword">from</span> XCurve<span class="token punctuation">.</span>AUROC<span class="token punctuation">.</span>dataloaders <span class="token keyword">import</span> get_data_loaders
+<span class="token keyword">from</span> easydict <span class="token keyword">import</span> EasyDict <span class="token keyword">as</span> edict
+
+hyper_param <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'mini-batch'</span><span class="token punctuation">:</span><span class="token number">64</span>
+<span class="token punctuation">}</span>
+
+args <span class="token operator">=</span> edict<span class="token punctuation">({</span>
+    <span class="token string">"data_dir"</span><span class="token punctuation">:</span> <span class="token string">"XCurve/AUROC/data/cifar-10-long-tail"</span><span class="token punctuation">,</span>
+    <span class="token string">"input_size"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">,</span> <span class="token number">32</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token string">"norm_params"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"mean"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">123.675</span><span class="token punctuation">,</span> <span class="token number">116.280</span><span class="token punctuation">,</span> <span class="token number">103.530</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+        <span class="token string">"std"</span><span class="token punctuation">:</span> <span class="token punctuation">[</span><span class="token number">58.395</span><span class="token punctuation">,</span> <span class="token number">57.120</span><span class="token punctuation">,</span> <span class="token number">57.375</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"use_lmdb"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+    <span class="token string">"resampler_type"</span><span class="token punctuation">:</span> <span class="token string">"None"</span><span class="token punctuation">,</span>
+    <span class="token string">"sampler"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"rpos"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span>
+        <span class="token string">"rneg"</span><span class="token punctuation">:</span> <span class="token number">10</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token string">"npy_style"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span>
+    <span class="token string">"aug"</span><span class="token punctuation">:</span> <span class="token boolean">True</span><span class="token punctuation">,</span> 
+    <span class="token string">"class2id"</span><span class="token punctuation">:</span> <span class="token punctuation">{</span>
+        <span class="token string">"0"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"1"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"2"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"3"</span><span class="token punctuation">:</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">"4"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span>
+        <span class="token string">"5"</span><span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"6"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"7"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"8"</span><span class="token punctuation">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">"9"</span><span class="token punctuation">:</span> <span class="token number">0</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">})</span>
+
+train_set<span class="token punctuation">,</span> val_set<span class="token punctuation">,</span> test_set <span class="token operator">=</span> get_datasets<span class="token punctuation">(</span>args<span class="token punctuation">)</span>
+train_loader<span class="token punctuation">,</span> val_loader<span class="token punctuation">,</span> test_loader <span class="token operator">=</span> get_data_loaders<span class="token punctuation">(</span>
+    train_set<span class="token punctuation">,</span>
+    val_set<span class="token punctuation">,</span>
+    test_set<span class="token punctuation">,</span>
+    hyper_param<span class="token punctuation">[</span><span class="token string">'mini-batch'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    hyper_param<span class="token punctuation">[</span><span class="token string">'mini-batch'</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i<span class="token punctuation">,</span> <span class="token punctuation">(</span>img<span class="token punctuation">,</span> lbl<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>train_loader<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    img <span class="token operator">=</span> img<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># image data</span>
+    lbl <span class="token operator">=</span> lbl<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># image label</span></code></pre>
+</article>
+              <!-- Submit request-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- Footer-->
+    <footer class="footer bg-dark pt-5 pt-md-6">
+      <div class="container pt-3 pt-md-0">
+        <div class="row pb-3">
+          <div class="col-md-4 mt-n2 pb-3 pb-md-0 mb-4"><a class="d-block mb-3" href="index.html" style="width: 153px;"><img src="img/logo/Xcurve-logo-trans.png" alt="Around"></a>
+            <p class="fs-sm text-light opacity-60 pb-2 pb-sm-3">We are working on building a python library to make it easy for researchers to optimize curve-related models. </p>
+          </div>
+          <div class="col-md-2 col-sm-4 ms-auto pb-1 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Quick start</h4>
+              <ul>
+                <li><a class="widget-link" href="index.html#">Get started</a></li>
+                <li><a class="widget-link" href="tutorials.html#">Documentation</a></li>
+                <!--<li><a class="widget-link" href="doc_dataset.html#">Documentation</a></li>-->
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 pb-1 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Other Links</h4>
+              <ul>
+                <li><a class="widget-link" href="https://github.com/statusrank/XCurve">Github</a></li>
+                <li><a class="widget-link" href="https://pypi.org/project/XCurve/#">Pypi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Our news</h4>
+              <ul>
+                <li><a class="widget-link" href="lastest_news.html#">Latest papers</a></li>
+                <!--<li><a class="widget-link" href="about.html#">Updates</a></li>-->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-0 border-light">
+        <div class="row align-items-center mt-3 py-4">
+          <div class="col-md-6 order-md-2 text-md-end mb-3">
+            <ul class="list-inline fs-sm mb-0">
+              <li class="list-inline-item"><a class="nav-link-style nav-link-light" href="about.html#">Send email to us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 order-md-1 mb-3">
+            <p class="fs-sm mb-0"><span class="text-light opacity-50 me-1">© All rights reserved. Made by XCurve.</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Sidebar toggle button-->
+    <button class="btn btn-primary btn-sm sidebar-toggle" type="button" data-bs-toggle="offcanvas" data-bs-target="#help-sidebar"><i class="ai-sidebar fs-base me-2"></i>Sidebar</button>
+    <!-- Back to top button<a class="btn-scroll-top" href="help-single-topic.html#top" data-scroll data-fixed-element><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon ai-arrow-up">   </i></a>-->
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+    <!-- Code style script -->
+    <script src="js/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Research</title>
+  <!-- SEO Meta Tags-->
+  <meta name="description" content="Around - Multipurpose Bootstrap Template">
+  <meta name="keywords"
+    content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
+  <meta name="author" content="Createx Studio">
+  <!-- Viewport-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Favicon and Touch Icons-->
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+  <meta name="msapplication-TileColor" content="#766df4">
+  <meta name="theme-color" content="#ffffff">
+  <!-- Page loading styles-->
+  <style>
+    .page-loading {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -webkit-transition: all .4s .2s ease-in-out;
+      transition: all .4s .2s ease-in-out;
+      background-color: #fff;
+      opacity: 0;
+      visibility: hidden;
+      z-index: 9999;
+    }
+
+    .page-loading.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .page-loading-inner {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      text-align: center;
+      -webkit-transform: translateY(-50%);
+      transform: translateY(-50%);
+      -webkit-transition: opacity .2s ease-in-out;
+      transition: opacity .2s ease-in-out;
+      opacity: 0;
+    }
+
+    .page-loading.active>.page-loading-inner {
+      opacity: 1;
+    }
+
+    .page-loading-inner>span {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: normal;
+      color: #737491;
+    }
+
+    .page-spinner {
+      display: inline-block;
+      width: 2.75rem;
+      height: 2.75rem;
+      margin-bottom: .75rem;
+      vertical-align: text-bottom;
+      border: .15em solid #766df4;
+      border-right-color: transparent;
+      border-radius: 50%;
+      -webkit-animation: spinner .75s linear infinite;
+      animation: spinner .75s linear infinite;
+    }
+
+    @-webkit-keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes spinner {
+      100% {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+  <!-- Vendor Styles-->
+  <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+  <!-- Vendor scrits: js libraries and plugins-->
+  <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+  <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+  <!-- Main theme script-->
+  <script src="js/theme.min.js"></script>
+  <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css" />
+  <!-- Main Theme Styles + Bootstrap-->
+  <link rel="stylesheet" media="screen" href="css/theme.min.css">
+  <!-- Google Tag Manager-->
+  <script>
+    (function (w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start': new Date().getTime(),
+        event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s),
+        dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-WKV3GT5');
+
+    var conference_list = ["TPAMI", "ICML", "NIPS", "CVPR"];
+    var conference_fullname = 
+    {
+      "TPAMI" :"TPAMI",
+      "ICML" :"ICML",
+      "NIPS" :"NeurIPS",
+      "CVPR" :"CVPR",
+    };
+
+    // 论文列表
+    var paper_list = [
+      {
+        "figure_href": "https://ieeexplore.ieee.org/document/10214222",
+        "figure_src": "img/paper/TDAUC.png",
+        "conference": "TPAMI",
+        "conference_href": "blog-list-ls.html#",
+        "paper": "AUC-Oriented Domain Adaptation: From Theory to Algorithm",
+        "paper_href": "https://ieeexplore.ieee.org/document/10214222",
+        "author": "Zhiyong Yang, Qianqian Xu, Shilong Bao, Peisong Wen, Xiaochun Cao, Qingming Huang",
+        "date": "August 2023"
+      },
+      {
+        "figure_href": "https://ieeexplore.ieee.org/document/10214340",
+        "figure_src": "img/paper/RevistingAUC.png",
+        "conference": "TPAMI",
+        "conference_href": "blog-list-ls.html#",
+        "paper": "AUC-Oriented Domain Adaptation: From Theory to Algorithm",
+        "paper_href": "https://ieeexplore.ieee.org/document/10214340",
+        "author": "Zhiyong Yang, Qianqian Xu, Wenzheng Hou, Shilong Bao, Yuan He, Xiaochun Cao, Qingming Huang",
+        "date": "August 2023"
+      },
+      //
+      {
+        "figure_href": "https://arxiv.org/abs/2209.01398",
+        "figure_src": "img/paper/AUTKC.png",
+        "conference": "TPAMI",
+        "conference_href": "blog-list-ls.html#",
+        "paper": "Optimizing Partial Area Under the Top-k Curve: Theory and Practice",
+        "paper_href": "https://arxiv.org/abs/2209.01398",
+        "author": "Zitai Wang, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao, Qingming Huang",
+        "date": "April 2023"
+      },
+      {
+        "figure_href": "https://arxiv.org/abs/2210.13458",
+        "figure_src": "img/paper/OpenAUC.png",
+        "conference": "NIPS",
+        "conference_href": "blog-list-ls.html",
+        "paper": "OpenAUC: Towards AUC-Oriented Open-Set Recognition",
+        "paper_href": "https://arxiv.org/abs/2210.13458",
+        "author": "Zitai Wang, Qianqian Xu, Zhiyong Yang, Yuan He, Xiaochun Cao, Qingming Huang",
+        "date": "November 2022"
+      },
+      //
+      {
+        "figure_href": "https://arxiv.org/pdf/2206.11655.pdf",
+        "figure_src": "img/paper/PUAC_TPAMI.png",
+        "conference": "TPAMI",
+        "conference_href": "blog-list-ls.html#",
+        "paper": "Optimizing Two-way Partial AUC with an End-to-end Framework",
+        "paper_href": "https://arxiv.org/pdf/2206.11655.pdf",
+        "author": "Zhiyong Yang, Qianqian Xu, Shilong Bao, Yuan He, Xiaochun Cao, Qingming Huang",
+        "date": "June 2022"
+      },
+      {
+        "figure_href": "https://arxiv.org/abs/2206.12169",
+        "figure_src": "img/paper/AdAUC.png",
+        "conference": "ICML",
+        "conference_href": "https://arxiv.org/abs/2206.12169",
+        "paper": "AdAUC: End-to-end Adversarial AUC Optimization Against Long-tail Problems",
+        "paper_href": "",
+        "author": "Wenzheng Hou, Qianqian Xu, Zhiyong Yang, Shilong Bao, Yuan He, Qingming Huang",
+        "date": "April 2022"
+      },
+      {
+        "figure_href": "https://arxiv.org/pdf/2206.11549.pdf",
+        "figure_src": "img/paper/RT.png",
+        "conference": "TPAMI",
+        "conference_href": "blog-list-ls.html#",
+        "paper": "Rethinking Collaborative Metric Learning: Toward an Efficient Alternative without Negative Sampling",
+        "paper_href": "https://arxiv.org/pdf/2206.11549.pdf",
+        "author": "Shilong Bao, Qianqian Xu, Zhiyong Yang, Xiaochun Cao, Qingming Huang",
+        "date": "December 2021"
+      },
+      {
+        "figure_href": "https://arxiv.org/abs/2107.13171",
+        "figure_src": "img/paper/MAUC.png",
+        "conference": "TPAMI",
+        "conference_href": "blog-list-ls.html#",
+        "paper": "Learning with Multiclass AUC: Theory and Algorithms",
+        "paper_href": "https://arxiv.org/abs/2107.13171",
+        "author": "Zhiyong Yang, Qianqian Xu, Shilong Bao, Xiaochun Cao, Qingming Huang",
+        "date": "July 2021"
+      },
+      {
+        "figure_href": "https://proceedings.mlr.press/v139/yang21k.html",
+        "figure_src": "img/paper/TPAUC.png",
+        "conference": "ICML",
+        "conference_href": "blog-list-ls.html#",
+        "paper": "When All We Need is a Piece of the Pie: A Generic Framework for Optimizing Two-way Partial AUC",
+        "paper_href": "https://proceedings.mlr.press/v139/yang21k.html",
+        "author": "Zhiyong Yang, Qianqian Xu, Shilong Bao, Yuan He, Xiaochun Cao, Qingming Huang",
+        "date": "July 2021"
+      },
+      {
+        "figure_href": "https://proceedings.neurips.cc/paper/2021/hash/28267ab848bcf807b2ed53c3a8f8fc8a-Abstract.html",
+        "figure_src": "img/paper/FPR.png",
+        "conference": "NIPS",
+        "conference_href": "blog-list-ls.html#",
+        "paper": "When False Positive is Intolerant: End-to-End Optimization with Low FPR for Multipartite Ranking",
+        "paper_href": "https://proceedings.neurips.cc/paper/2021/hash/28267ab848bcf807b2ed53c3a8f8fc8a-Abstract.html",
+        "author": "Peisong Wen, Qianqian Xu, Zhiyong Yang, Yuan He, Qingming Huang",
+        "date": "December 2021"
+      },
+    ];
+
+    // 自增索引
+    var all_index_list = [];
+    for (let i = 0; len = paper_list.length, i < len; i++) {
+      all_index_list.push(i)
+    }
+
+    // 函数：传入索引列表，显示相应论文
+    var set_paper = function (paper_index_list) {
+      function myFunction(value, index, array) {
+        paper = paper_list[value];
+        var str = '<article class="card card-horizontal card-hover mb-grid-gutter"> \
+          <a class="card-img-top text-center" href="' +
+          paper["figure_href"] +
+          '" ' + 'target="' + paper["figure_href"] + '"><img \
+          style="margin-top: 15%; margin-left: 5%;" src="' +
+          paper["figure_src"] +
+          '" alt="Image"></a> \
+          <div class="card-body"> \
+          <a class="meta-link fs-sm mb-2" href="' +
+          paper["conference_href"] +
+          '">' +
+          "" +
+          '</a> \
+          <h2 class="h4 nav-heading mb-4"><a href="' +
+          paper["paper_href"] +
+          '"' + 'target="' + paper["paper_href"] + '">' +
+          paper["paper"] +
+          '</a></h2> \
+          <div class="ps-2 ms-1 mt-n1">Authors:<span class="fw-semibold ms-1">'
+          + paper["author"] +
+          '</span></div><br/>' + 
+          '<div class="ps-2 ms-1 mt-n1">Published at: \
+          <span class="fw-semibold ms-1">' + 
+          conference_fullname[paper["conference"]] + 
+          '</span></div></a> \
+          <div class="mt-3 text-end text-nowrap"> \
+          <a class="meta-link fs-xs" href="blog-list-ls.html#"></a><a class="meta-link fs-xs"><i \
+          class="ai-calendar me-1 mt-n1"></i>&nbsp;'
+          + paper["date"] + '</a> \
+          </div> \
+        </div> \
+        </article>';
+        $("div#paper_show_list").append(str);
+      };
+      $("div#paper_show_list").html("");
+      $("div#paper_show_list").append('<h1 class="mb-5">Research</h1>');
+      paper_index_list.forEach(myFunction);
+    };
+
+    // 界面初始化
+    $(document).ready(function () {
+
+      // 刷掉preloader
+      var preloader = document.querySelector('.page-loading');
+      preloader.classList.remove('active');
+      setTimeout(function () {
+        preloader.remove();
+      }, 1);
+
+      $("input#search").bind("keypress", function(event){
+        if(event.keyCode == 13){
+          $(location).attr("href", "research.html?search=" + $("input#search").val());
+        }
+      });
+
+      // 解析url参数
+      var url = window.location.href;
+      var param_name = url.substring(url.indexOf('?') + 1, url.indexOf('='));
+      var param_value = url.substring(url.indexOf('=') + 1);
+
+      // 根据参数显示论文
+      if (param_name == "filter" && param_value) { // 限定属于某一会议的论文
+        var show_index_list = all_index_list.filter(function (value, index, array) {
+          return paper_list[value]["conference"] == param_value;
+        });
+        set_paper(show_index_list);
+      }
+      else if (param_name == "search") { // 限定关键字
+        var show_index_list = all_index_list.filter(function (value, index, array) {
+          console.log(paper_list[value]["paper"].indexOf(param_value) != -1);
+          return paper_list[value]["paper"].indexOf(param_value) != -1;
+        });
+        set_paper(show_index_list);
+      }
+      else { // 无参数，全部显示
+        set_paper(all_index_list);
+      }
+
+      // 每个会议的论文数量
+      var paper_nums = new Array(conference_list.length);
+      for(let i=0 ; i<conference_list.length ; i++) {
+        paper_nums[i] = 0;
+        for(let j=0 ; j<paper_list.length ; j++) {
+          if (paper_list[j]["conference"] == conference_list[i])
+            paper_nums[i] += 1;
+        }
+      }
+      for(let i=0 ; i<conference_list.length ; i++) {
+        var selector = "a#" + conference_list[i];
+        $(selector).children("small").text(paper_nums[i]);
+      }
+
+    });
+  </script>
+</head>
+<!-- Body-->
+
+<body class="is-sidebar">
+  <!-- Google Tag Manager (noscript)-->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0"
+      style="display: none; visibility: hidden;"></iframe>
+  </noscript>
+  <!-- Page loading spinner-->
+  <div class="page-loading active">
+    <div class="page-loading-inner">
+      <div class="page-spinner"></div><span>Loading...</span>
+    </div>
+  </div>
+  <main class="page-wrapper">
+    <!-- Navbar (Solid background + shadow)-->
+    <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page.-->
+    <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
+      <div class="navbar-search bg-light">
+        <div class="container d-flex flex-nowrap align-items-center"><i class="ai-search fs-xl"></i>
+          <input class="form-control form-control-xl navbar-search-field" type="text" placeholder="Search site">
+          <div class="d-flex align-items-center"><span class="text-muted fs-xs mt-1 d-none d-sm-inline">Close</span>
+            <button class="btn-close p-2" type="button" data-bs-toggle="search"></button>
+          </div>
+        </div>
+      </div>
+      <div class="container px-0 px-xl-3">
+        <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html"><img
+            class="d-none d-lg-block" src="img/logo/Xcurve-logo.png" alt="XCurve" width="153"><img class="d-lg-none"
+            src="img/logo/Xcurve-logo.png" alt="XCurve" width="58"></a>
+        <!--<div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none"
+            href="demo-personal-portfolio.html#modal-contact" data-bs-toggle="modal">Contact Us</a><a
+            class="btn btn-sm btn-primary d-lg-none d-inline-block" href="demo-personal-portfolio.html#modal-contact"
+            data-bs-toggle="modal">Contact Us</a></div>-->
+        <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+          <div class="offcanvas-header navbar-shadow">
+            <h5 class="mt-1 mb-0">Menu</h5>
+            <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <!-- Menu-->
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown dropdown-mega"><a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item dropdown dropdown-mega"><a class="nav-link dropdown-toggle" href="tutorials.html">Documentation</a>
+              </li>
+              <!--<li class="nav-item dropdown dropdown-mega"><a class="nav-link dropdown-toggle" href="doc_dataset.html">Documentation</a>
+              </li>-->
+              <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Benchmarks</a> -->
+                <!-- <ul class="dropdown-menu">
+                  <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Research</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="dashboard-orders.html">Our Researchs</a></li>
+                      <li><a class="dropdown-item" href="dashboard-sales.html">Our Code</a></li>
+                      <li><a class="dropdown-item" href="dashboard-messages.html">Lastest Messages</a></li>
+                    </ul>
+                  </li>
+                  <li><a class="dropdown-item" href="signin-illustration.html">Datasets</a></li>
+                  <li><a class="dropdown-item" href="signin-signup.html">Others</a></li>
+                </ul> -->
+              <!-- </li> -->
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="datasets.html">Datasets</a></li>
+              <li class="nav-item dropdown active"><a class="nav-link dropdown-toggle" href="research.html">Research</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="about.html#" >Team</a>
+                <!-- <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="about.html">About</a></li> -->
+                  <!-- <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Github</a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="contacts-v1.html">Contacts v.1</a></li>
+                      <li><a class="dropdown-item" href="contacts-v2.html">Contacts v.2</a></li>
+                      <li><a class="dropdown-item" href="contacts-v3.html">Contacts v.3</a></li>
+                    </ul>
+                  </li> -->
+                  <!-- <li><a class="dropdown-item active" href="lastest_news.html#">Latest News</a></li>
+                </ul> -->
+              </li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="lastest_news.html">Latest News</a></li>
+              <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="https://github.com/statusrank/XCurve" data-bs-toggle="dropdown">Github</a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="https://github.com/statusrank/XCurve/blob/master/README.md">
+                      <div class="d-flex align-items-center">
+                        <div class="fs-xl text-muted"><i class="ai-file-text"></i></div>
+                        <div class="ps-3"><span class="d-block text-heading">Documentation</span><small class="d-block text-muted">Kick-start customization</small></div>
+                      </div></a></li>
+                  <li class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="docs/changelog.html">
+                      <div class="d-flex align-items-center">
+                        <div class="fs-xl text-muted"><i class="ai-edit"></i></div>
+                        <div class="ps-3"><span class="d-block text-heading">Changelog<span class="badge bg-success ms-2">v2.4.0</span></span><small class="d-block text-muted">Regular updates</small></div>
+                      </div></a></li>
+                </ul>
+              </li>
+              
+            </ul>
+          </div>
+          <div class="offcanvas-footer"><a class="btn d-block w-100 btn-primary"
+              href="demo-personal-portfolio.html#modal-contact" data-bs-toggle="modal">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page content-->
+    <div class="sidebar-enabled">
+      <div class="container">
+        <div class="row">
+          <!-- Sidebar-->
+          <div class="sidebar col-lg-3 pt-lg-5">
+            <div class="offcanvas offcanvas-collapse" id="blog-sidebar">
+              <div class="offcanvas-header navbar-shadow px-4 mb-3">
+                <h5 class="mt-1 mb-0">Sidebar</h5>
+                <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+              </div>
+              <div class="offcanvas-body px-4 pt-3 pt-lg-0 ps-lg-0 pe-lg-2 pe-xl-4" data-simplebar>
+                <!-- Search-->
+                <div class="widget mb-4">
+                  <h3 class="widget-title">Search</h3>
+                  <div class="input-group"><i
+                      class="ai-search position-absolute top-50 start-0 translate-middle-y ms-3"></i>
+                    <input id="search" class="form-control rounded" type="text" placeholder="Search">
+                  </div>
+                </div>
+                <!-- Categories-->
+                <div class="widget widget-categories mb-4">
+                  <h3 class="widget-title">Categories</h3>
+                  <ul>
+                    <li><a id="TPAMI" class="widget-link" href="research.html?filter=TPAMI">TPAMI<small class="text-muted ps-1 ms-2">3</small></a></li>
+                    <li><a id="ICML" class="widget-link" href="research.html?filter=ICML">ICML<small class="text-muted ps-1 ms-2">3</small></a></li>
+                    <li><a id="NIPS" class="widget-link" href="research.html?filter=NIPS">NeurIPS<small class="text-muted ps-1 ms-2">5</small></a></li>
+                    <!--<li><a id="CVPR" class="widget-link" href="research.html?filter=CVPR">CVPR<small class="text-muted ps-1 ms-2">1</small></a></li>-->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Content-->
+          <div class="col-lg-9 content py-4 mb-2 mb-sm-0 pb-sm-5" id="paper_show_list">
+
+            <!-- 分页， 先注释掉 -->
+            <!-- <div class="d-md-flex justify-content-between align-items-center pt-3 pb-2">
+              <div class="d-flex justify-content-center align-items-center mb-4">
+                <label class="pe-1 me-2">Show</label>
+                <select class="form-select me-2" style="width: 5rem;">
+                  <option value="10">10</option>
+                  <option value="20">20</option>
+                  <option value="30">30</option>
+                  <option value="40">40</option>
+                  <option value="50">50</option>
+                </select>
+                <div class="fs-sm text-nowrap ps-1 mb-1">posts per page</div>
+              </div>
+              <nav class="mb-4" aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                  <li class="page-item"><a class="page-link" href="blog-list-ls.html#" aria-label="Previous"><i
+                        class="ai-chevron-left"></i></a></li>
+                  <li class="page-item d-sm-none"><span class="page-link page-link-static">2 / 10</span></li>
+                  <li class="page-item d-none d-sm-block"><a class="page-link" href="blog-list-ls.html#">1</a></li>
+                  <li class="page-item active d-none d-sm-block" aria-current="page"><span class="page-link">2<span
+                        class="visually-hidden">(current)</span></span></li>
+                  <li class="page-item d-none d-sm-block"><a class="page-link" href="blog-list-ls.html#">3</a></li>
+                  <li class="page-item d-none d-sm-block"><a class="page-link" href="blog-list-ls.html#">4</a></li>
+                  <li class="page-item d-none d-sm-block">...</li>
+                  <li class="page-item d-none d-sm-block"><a class="page-link" href="blog-list-ls.html#">10</a></li>
+                  <li class="page-item"><a class="page-link" href="blog-list-ls.html#" aria-label="Next"><i
+                        class="ai-chevron-right"></i></a></li>
+                </ul>
+              </nav>
+            </div> -->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+    <!-- Footer-->
+    <footer class="footer bg-dark pt-5 pt-md-6">
+      <div class="container pt-3 pt-md-0">
+        <div class="row pb-3">
+          <div class="col-md-4 mt-n2 pb-3 pb-md-0 mb-4"><a class="d-block mb-3" href="index.html" style="width: 153px;"><img src="img/logo/Xcurve-logo-trans.png" alt="Around"></a>
+            <p class="fs-sm text-light opacity-60 pb-2 pb-sm-3">We are working on building a python library to make it easy for researchers to optimize curve-related models. </p>
+          </div>
+          <div class="col-md-2 col-sm-4 ms-auto pb-1 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Quick start</h4>
+              <ul>
+                <li><a class="widget-link" href="index.html#">Home</a></li>
+                <li><a class="widget-link" href="tutorials.html#">Documentation</a></li>
+                <!--<li><a class="widget-link" href="doc_dataset.html#">Documentation</a></li>-->
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 pb-1 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Other Links</h4>
+              <ul>
+                <li><a class="widget-link" href="https://github.com/statusrank/XCurve">Github</a></li>
+                <li><a class="widget-link" href="https://pypi.org/project/XCurve/#">Pypi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Our news</h4>
+              <ul>
+                <li><a class="widget-link" href="lastest_news.html#">Latest papers</a></li>
+                <!--<li><a class="widget-link" href="about.html#">Updates</a></li>-->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-0 border-light">
+        <div class="row align-items-center mt-3 py-4">
+          <div class="col-md-6 order-md-2 text-md-end mb-3">
+            <ul class="list-inline fs-sm mb-0">
+              <li class="list-inline-item"><a class="nav-link-style nav-link-light" href="about.html#">Send email to us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 order-md-1 mb-3">
+            <p class="fs-sm mb-0"><span class="text-light opacity-50 me-1">© All rights reserved. Made by XCurve.</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  <!-- Sidebar toggle button-->
+  <button class="btn btn-primary btn-sm sidebar-toggle" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#blog-sidebar"><i class="ai-sidebar fs-base me-2"></i>Sidebar</button>
+  <!-- Back to top button<a class="btn-scroll-top" href="blog-list-ls.html#top" data-scroll data-fixed-element><span
+      class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon ai-arrow-up">
+    </i></a>-->
+</body>
+
+</html>

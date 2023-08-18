@@ -1,0 +1,178 @@
+<a id="Data_Preparation"></a>
+
+<h3>Data Preparation</h3>
+The <code>dataset</code> in XCurve consists of two parts: the <strong>raw data</strong> and the <strong> dataset configuration</strong>. For raw data, 
+XCurve supports two data types.
+
+<h5 class="pt-3 pb-md-3">Raw Data (img type)</h5>
+
+<pre class="language-treeview" tabindex="0"><code class="language-treeview"><span class="token treeview-part"><span class="token entry-name dir">XCurve</span></span>
+
+  <span class="token treeview-part"><span class="token entry-line line-h">|-- </span><span class="token entry-name dir">data</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name dir">dataset_name (The name of your dataset, no duplicates are allowed)</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-h">|-- </span><span class="token entry-name dir">train</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-h">|-- </span><span class="token entry-name dir">class_id_1 (The category id in the dataset, must be a number)</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-h">|-- </span><span class="token entry-name ext-jpg">1.jpeg</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-h">|-- </span><span class="token entry-name ext-jpg">2.jpeg</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-h">|-- </span><span class="token entry-name ext-jpg">...</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name ext-jpg">100.jpeg</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-h">|-- </span><span class="token entry-name dir">class_id_... (Similar to the structure of class_id_1)</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name ext-jpg">...</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name dir">class_id_100</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-h">|-- </span><span class="token entry-name dir">test (Similar to the structure of train dir)</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name dir">val (Similar to the structure of train dir)</span></span>
+</code></pre>
+<h5 class="pt-3 pb-md-3" >Raw Data (npy type)</h5>
+<div class="row align-items-center">
+<div class="col-md-6 mb-4">
+<pre class="language-treeview" tabindex="0"><code class="language-treeview"><span class="token treeview-part"><span class="token entry-name dir">XCurve</span></span>
+<span class="token treeview-part"><span class="token entry-line line-h">|-- </span><span class="token entry-name dir">data</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name dir">dataset_name</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-h">|-- </span><span class="token entry-name ext-nfo">train.npy</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-h">|-- </span><span class="token entry-name ext-nfo">test.npy</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name ext-nfo">val.npy</span></span>
+</code></pre>
+</div>
+<div class="col-md-6 pt-2 pt-md-0 mb-4">
+<pre class="language-javascript" data-adapter="dump_json" data-jsonp-status="loaded" tabindex="0"><code class="language-javascript">train.npy<span class="token operator">:</span> np.array
+<span class="token punctuation">(</span><span class="token punctuation">{</span>
+  <span class="token string-property property">"data"</span><span class="token operator">:</span> shape:(n_items, width, height)<span class="token punctuation">,</span>
+  <span class="token string-property property">"target"</span><span class="token operator">:</span> shape:(n_items, 1)
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+test.npy<span class="token operator">:</span> np.array (Similar to train.npy)
+val.npy<span class="token operator">:</span> np.array (Similar to train.npy)
+</code></pre>
+</div>
+</div>
+              <p>In some applications, we will build small datasets using only a few classes of the original dataset. 
+                However, we have to construct new datasets several times. 
+                In XCurve, we use the <code>configuration</code>, which allows us to construct new datasets on top of the original data without wasting hard disk space.</p>
+              <h5 class="pt-3 pb-md-3" >Dataset Configuration</h5>
+<div class="row align-items-center">
+<div class="col-md-6 mb-4">
+<pre class="language-treeview" tabindex="0"><code class="language-treeview"><span class="token treeview-part"><span class="token entry-name dir">XCurve</span></span>
+<span class="token treeview-part"><span class="token entry-line line-h">|-- </span><span class="token entry-name dir">config</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name dir">datasets</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-h">|-- </span><span class="token entry-name ext-nfo">dataset_name_1.json</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-h">|-- </span><span class="token entry-name ext-nfo">dataset_name_2.json</span></span>
+<span class="token treeview-part"><span class="token entry-line line-v">|   </span><span class="token entry-line line-v-gap">    </span><span class="token entry-line line-v-last">`-- </span><span class="token entry-name ext-nfo">dataset_name_3.json</span></span>
+</code></pre>
+</div>
+<div class="col-md-6 pt-2 pt-md-0 mb-4">
+<pre class="language-javascript" data-adapter="dump_json" data-jsonp-status="loaded" tabindex="0"><code class="language-javascript">dataset_name_1.json<span class="token operator">:</span><span class="token punctuation">{</span>
+  <span class="token string-property property">"data_dir"</span><span class="token operator">:</span> <span class="token string">"./data/dataset_name_1"</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"input_size"</span><span class="token operator">:</span> <span class="token string">[32,32]</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"sampler"</span><span class="token operator">:<span class="token punctuation">{</span><span class="token string-property property">"rpos"</span><span class="token operator">:</span>1,<span class="token string-property property">"rneg"</span><span class="token operator">:</span>10<span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token string-property property">"npy_style"</span><span class="token operator">:</span> true<span class="token punctuation">,</span>
+  <span class="token string-property property">"class2id"</span><span class="token operator">:<span class="token punctuation">{</span><span class="token string-property property">"id_1"</span><span class="token operator">:</span>1,<span class="token string-property property">"id_2"</span><span class="token operator">:</span>1<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+</div>
+</div>
+<p>Parameter <code>sampler</code> means the ratio of positive and negative instances. 
+  Parameter <code>class2id</code> means the classes which are chosen in the new dataset.</p>
+
+<h5>Load Data</h5>
+<p>After configuring the datasets, we can use XCurve's <code>get_datasets</code> and <code>get_data_loaders</code> functions to load the data.</p>
+<article class="markdown-body"><pre><code class="fenced-code-block"><span class="token keyword">from</span> XCurve.AUROC<span class="token punctuation">.</span>data<span class="token punctuation">.</span>dataloaders <span class="token keyword">import</span> get_datasets
+<span class="token keyword">from</span> XCurve.AUROC<span class="token punctuation">.</span>data<span class="token punctuation">.</span>dataloaders <span class="token keyword">import</span> get_data_loaders
+<span class="token keyword">from</span> XCurve.AUROC<span class="token punctuation">.</span>utils <span class="token keyword">import</span> load_json
+
+hyper_param <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'mini-batch'</span><span class="token punctuation">:</span><span class="token number">64</span>
+<span class="token punctuation">}</span>
+
+dataset <span class="token operator">=</span> <span class="token string">"cifar-100"</span>
+
+args <span class="token operator">=</span> load_json<span class="token punctuation">(</span>dataset<span class="token punctuation">)</span>
+
+train_set<span class="token punctuation">,</span> val_set<span class="token punctuation">,</span> test_set <span class="token operator">=</span> get_datasets<span class="token punctuation">(</span>args<span class="token punctuation">.</span>dataset<span class="token punctuation">)</span>
+train_loader<span class="token punctuation">,</span> val_loader<span class="token punctuation">,</span> test_loader <span class="token operator">=</span> get_data_loaders<span class="token punctuation">(</span>
+    train_set<span class="token punctuation">,</span>
+    val_set<span class="token punctuation">,</span>
+    test_set<span class="token punctuation">,</span>
+    hyper_param<span class="token punctuation">[</span><span class="token string">'mini-batch'</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    hyper_param<span class="token punctuation">[</span><span class="token string">'mini-batch'</span><span class="token punctuation">]</span>
+<span class="token punctuation">)</span>
+
+<span class="token keyword">for</span> i<span class="token punctuation">,</span> <span class="token punctuation">(</span>img<span class="token punctuation">,</span> lbl<span class="token punctuation">)</span> <span class="token keyword">in</span> <span class="token builtin">enumerate</span><span class="token punctuation">(</span>train_loader<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    img <span class="token operator">=</span> img<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># image data</span>
+    lbl <span class="token operator">=</span> lbl<span class="token punctuation">.</span>cuda<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment"># image label</span></code></pre>
+</article>
+
+<a id="Model"></a>
+<h3>How to build model</h3>
+
+<!-- <div class="d-md-flex justify-content-between pb-2 mb-4">
+  <h1 class="me-3" style="max-width: 38rem;">How to build model</h1><span class="fs-sm text-muted text-md-nowrap pt-2">Posted on May 31, 2022</span>
+</div> -->
+
+<!-- Content-->
+<p>Models are one of the main parts of the machine learning task. 
+   In experiments, we need to use a suitable backbone to compare the results between different methods.
+   In this section, we will learn how to use XCurve to build a model. 
+   XCurve has implemented several backbones commonly used in deep learning:
+</p>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Model name</th>
+      <th scope="col">Total params</th>
+      <th scope="col">Params size</th>
+      <th scope="col">Forward pass size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>densenet121</td>
+      <td>7,263,185</td>
+      <td>2.54 MB</td>
+      <td>40.33 MB</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>mlp</td>
+      <td>404,161</td>
+      <td>1.54 MB</td>
+      <td>0.33 MB</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>resnet18</td>
+      <td>11,177,025</td>
+      <td>0.75 MB</td>
+      <td>82.25 MB</td>
+    </tr>
+    <tr>
+      <th scope="row">4</th>
+      <td>resnet20</td>
+      <td>269,137</td>
+      <td>1.03 MB</td>
+      <td>232.00 MB</td>
+    </tr>
+  </tbody>
+</table>
+<h5 class="pt-3 pb-md-3" >Model Configuration</h5>
+<pre class="language-javascript" data-adapter="dump_json" data-jsonp-status="loaded" tabindex="0"><code class="language-javascript"><span class="token punctuation">{</span>
+  <span class="token string-property property">"model_type"</span><span class="token operator">:</span> "resnet18"<span class="token punctuation">,</span>
+  <span class="token string-property property">"num_classes"</span><span class="token operator">:</span> 2<span class="token punctuation">,</span>
+  <span class="token string-property property">"pretrained"</span><span class="token operator">:</span> "../pretrained_models/resnet18.pth"<span class="token punctuation">,</span>
+<span class="token punctuation">}</span>
+</code></pre>
+              <h5 class="pt-3 pb-md-3">Code</h5>
+<article class="markdown-body"><pre><code class="fenced-code-block"><span class="token keyword">from</span> XCurve<span class="token punctuation">.</span>AUROC<span class="token punctuation">.</span>models <span class="token keyword">import</span> generate_net
+<span class="token keyword">from</span> XCurve<span class="token punctuation">.</span>AUROC<span class="token punctuation">.</span>utils <span class="token keyword">import</span> load_json
+args <span class="token operator">=</span> load_json<span class="token punctuation">(</span><span class="token boolean">None</span><span class="token punctuation">,</span> <span class="token string">'resnet18'</span><span class="token punctuation">)</span>
+model <span class="token operator">=</span> generate_net<span class="token punctuation">(</span>args<span class="token punctuation">.</span>model<span class="token punctuation">)</span></code></pre>
+</article>
+
+<a id="Loss_Function"></a>
+<h3>Loss Function</h3>
+<a id="Optimizer"></a>
+<h3>Optimizer</h3>
+<a id="Metrics"></a>
+<h3>Metrics</h3>
+<a id="Full_Code"></a>
+<h3>Full Code</h3>
