@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 764.76 496.93" style="enable-background:new 0 0 764.76 496.93;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FDF3F4;}
+	.st1{opacity:0.5;fill:none;stroke:#3F5465;stroke-width:2;stroke-miterlimit:10;}
+	.st2{opacity:0.5;}
+	.st3{fill:none;stroke:#3F5465;stroke-width:2;stroke-miterlimit:10;}
+	.st4{fill:none;stroke:#3F5465;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:4.8824,3.9059;}
+	.st5{fill:none;stroke:#3F5465;stroke-width:2;stroke-miterlimit:10;stroke-dasharray:5.2731,4.2185;}
+	.st6{opacity:0.7;fill:#FADEE7;}
+	.st7{fill:#3F5465;}
+	.st8{font-family:'OTGulimB-KSCpc-EUC-H';}
+	.st9{font-size:14px;}
+	.st10{display:none;opacity:0.5;}
+	.st11{display:inline;}
+	.st12{opacity:0.5;fill:#3F5465;}
+	.st13{font-size:8px;}
+	.st14{fill:#EC9499;}
+	.st15{font-size:7px;}
+	.st16{fill:#E8F3E6;}
+	.st17{fill:#98D0C7;}
+	.st18{opacity:0.7;fill:none;stroke:#000000;stroke-width:2;stroke-miterlimit:10;}
+	.st19{fill:none;stroke:#000000;stroke-width:0.25;stroke-miterlimit:10;}
+	.st20{opacity:0.7;}
+	.st21{font-size:7.2327px;}
+	.st22{fill:#FDFBE4;}
+	.st23{fill:#C9CACA;}
+	.st24{opacity:0.3;}
+	.st25{fill:#EEF8FD;}
+	.st26{opacity:0.1;fill:#98D0C7;}
+	.st27{fill:none;stroke:#EC9499;stroke-width:2;stroke-miterlimit:10;}
+	.st28{fill:none;stroke:#98D0C7;stroke-width:2;stroke-miterlimit:10;}
+	.st29{opacity:0.4;fill:none;stroke:#727171;stroke-width:2;stroke-miterlimit:10;}
+	.st30{opacity:0.4;fill:#98D0C7;}
+	.st31{opacity:0.4;fill:#EC9499;}
+</style>
+<g id="图层_1">
+	<path class="st0" d="M339.57,225.15H57.5c-9.39,0-17.01-7.61-17.01-17.01V43.52c0-9.39,7.61-17.01,17.01-17.01h282.07
+		c9.39,0,17.01,7.61,17.01,17.01v164.62C356.58,217.53,348.97,225.15,339.57,225.15z"/>
+	<g id="TPAUC">
+		<polyline class="st1" points="309.44,114.06 221.44,114.06 221.44,189.72 		"/>
+		<path class="st1" d="M309.44,114.06c-42.8,0-88,38.86-88,75.66h88V114.06z"/>
+		<g class="st2">
+			<g>
+				<line class="st3" x1="221.44" y1="154.62" x2="223.94" y2="154.62"/>
+				<line class="st4" x1="227.85" y1="154.62" x2="304.99" y2="154.62"/>
+				<line class="st3" x1="306.94" y1="154.62" x2="309.44" y2="154.62"/>
+			</g>
+		</g>
+		<g class="st2">
+			<g>
+				<line class="st3" x1="262.13" y1="114.06" x2="262.13" y2="116.56"/>
+				<line class="st5" x1="262.13" y1="120.78" x2="262.13" y2="185.11"/>
+				<line class="st3" x1="262.13" y1="187.22" x2="262.13" y2="189.72"/>
+			</g>
+		</g>
+		<path class="st6" d="M261.1,130.56c-6.22,4.12-8.72,6.14-14,10.96c-5.51,5.02-6.5,6.48-11,12.14l25.03-0.09L261.1,130.56z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 89.1338 57.6015)" class="st7 st8 st9">Two-way Partial AUC Optimization</text>
+	<g id="AUC">
+		<polyline class="st1" points="183.14,114.06 95.14,114.06 95.14,189.72 		"/>
+		<path class="st1" d="M183.14,114.06c-42.8,0-88,38.86-88,75.66h88V114.06z"/>
+		<g class="st10">
+			<g class="st11">
+				<line class="st3" x1="76.41" y1="157.68" x2="78.91" y2="157.68"/>
+				<line class="st4" x1="82.82" y1="157.68" x2="159.96" y2="157.68"/>
+				<line class="st3" x1="161.91" y1="157.68" x2="164.41" y2="157.68"/>
+			</g>
+		</g>
+		<g class="st10">
+			<g class="st11">
+				<line class="st3" x1="117.1" y1="117.13" x2="117.1" y2="119.63"/>
+				<line class="st5" x1="117.1" y1="123.85" x2="117.1" y2="188.18"/>
+				<line class="st3" x1="117.1" y1="190.29" x2="117.1" y2="192.79"/>
+			</g>
+		</g>
+		<path class="st6" d="M182.11,115.07c-25.96,0.44-46.3,13.12-59.52,24.8c-5.53,4.88-25.76,23.47-26.4,48.85h85.92V115.07z"/>
+	</g>
+	<text transform="matrix(1 0 0 1 131.5223 200.3925)" class="st12 st8 st13">FPR</text>
+	<text transform="matrix(1 0 0 1 261.1328 200.8784)" class="st12 st8 st13">FPR</text>
+	<text transform="matrix(1 0 0 1 74.8373 150.3929)" class="st12 st8 st13">TPR</text>
+	<text transform="matrix(1 0 0 1 203.4347 150.3931)" class="st12 st8 st13">TPR</text>
+	<text transform="matrix(1 0 0 1 89.4134 85.5377)"><tspan x="0" y="0" class="st14 st8 st9">Yang, et al, ICML 21 / </tspan><tspan x="145.11" y="0" class="st7 st8 st9">Oral</tspan></text>
+	<text transform="matrix(1 0 0 1 93.6733 198.3403)" class="st12 st8 st15">0</text>
+	<text transform="matrix(1 0 0 1 180.7254 198.8441)" class="st12 st8 st15">1</text>
+	<text transform="matrix(1 0 0 1 219.4523 199.2639)" class="st12 st8 st15">0</text>
+	<text transform="matrix(1 0 0 1 307.6532 199.768)" class="st12 st8 st15">1</text>
+	<text transform="matrix(1 0 0 1 213.6181 116.3726)" class="st12 st8 st15">1</text>
+	<text transform="matrix(1 0 0 1 86.3268 192.0675)" class="st12 st8 st15">0</text>
+	<text transform="matrix(1 0 0 1 86.6209 116.3728)" class="st12 st8 st15">1</text>
+	<text transform="matrix(1 0 0 1 213.1504 192.0673)" class="st12 st8 st15">0</text>
+</g>
+<g id="图层_2">
+	<path class="st16" d="M706.16,225.15H424.09c-9.39,0-17.01-7.61-17.01-17.01V43.52c0-9.39,7.61-17.01,17.01-17.01h282.07
+		c9.39,0,17.01,7.61,17.01,17.01v164.62C723.16,217.53,715.55,225.15,706.16,225.15z"/>
+	<text transform="matrix(1 0 0 1 455.7163 57.6015)" class="st7 st8 st9">AUC Optimization for Recommendation</text>
+	<text transform="matrix(1 0 0 1 455.9959 85.5377)"><tspan x="0" y="0" class="st17 st8 st9">Bao, et al, ICML 21</tspan><tspan x="122.02" y="0" class="st14 st8 st9"> </tspan><tspan x="125.94" y="0" class="st17 st8 st9">/</tspan><tspan x="132.75" y="0" class="st14 st8 st9"> </tspan><tspan x="136.67" y="0" class="st7 st8 st9">TPAMI</tspan></text>
+	<g>
+		<g>
+			<line class="st18" x1="475.46" y1="194.94" x2="669.04" y2="194.94"/>
+			<g>
+				<g>
+					<line class="st18" x1="475.46" y1="193.94" x2="475.46" y2="192.01"/>
+					<line class="st19" x1="669.04" y1="193.94" x2="669.04" y2="192.01"/>
+				</g>
+				<g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<text transform="matrix(1 0 0 1 468.113 196.6537)" class="st20 st8 st21">0</text>
+				<text transform="matrix(1 0 0 1 468.6266 181.224)" class="st20 st8 st21">1</text>
+				<text transform="matrix(1 0 0 1 468.113 165.7943)" class="st20 st8 st21">2</text>
+				<text transform="matrix(1 0 0 1 468.113 150.3642)" class="st20 st8 st21">3</text>
+				<text transform="matrix(1 0 0 1 468.113 134.9345)" class="st20 st8 st21">4</text>
+				<text transform="matrix(1 0 0 1 468.113 119.5048)" class="st20 st8 st21">5</text>
+			</g>
+			<line class="st18" x1="475.46" y1="194.94" x2="475.46" y2="117.79"/>
+			<g>
+				<g>
+					<line class="st18" x1="475.46" y1="194.94" x2="480.3" y2="194.94"/>
+					<line class="st18" x1="475.46" y1="178.51" x2="480.3" y2="178.51"/>
+					<line class="st18" x1="475.46" y1="163.08" x2="480.3" y2="163.08"/>
+					<line class="st18" x1="475.46" y1="147.65" x2="480.3" y2="147.65"/>
+					<line class="st18" x1="475.46" y1="132.22" x2="480.3" y2="132.22"/>
+					<line class="st18" x1="475.46" y1="117.81" x2="480.3" y2="117.81"/>
+				</g>
+				<g>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+				<g>
+					<rect x="625.16" y="116.79" class="st17" width="23.23" height="77.15"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<rect x="599.35" y="147.65" class="st17" width="23.23" height="46.29"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<rect x="573.54" y="132.22" class="st17" width="23.23" height="61.72"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<rect x="547.73" y="147.65" class="st17" width="23.23" height="46.29"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<rect x="521.92" y="163.08" class="st17" width="23.23" height="30.86"/>
+				</g>
+			</g>
+			<g>
+				<g>
+					<rect x="496.11" y="178.51" class="st17" width="23.23" height="15.43"/>
+				</g>
+			</g>
+		</g>
+		<g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+			<g>
+			</g>
+		</g>
+	</g>
+</g>
+<g id="图层_3">
+	<path class="st22" d="M339.57,470.23H57.5c-9.39,0-17.01-7.61-17.01-17.01V288.6c0-9.39,7.61-17.01,17.01-17.01h282.07
+		c9.39,0,17.01,7.61,17.01,17.01v164.62C356.58,462.62,348.97,470.23,339.57,470.23z"/>
+	<text transform="matrix(1 0 0 1 89.1338 302.6866)" class="st7 st8 st9">Multi-Class AUC Optimization</text>
+	<text transform="matrix(1 0 0 1 89.4134 330.6228)"><tspan x="0" y="0" class="st14 st8 st9">Yang, et al, TPAMI 21 / </tspan><tspan x="154.03" y="0" class="st7 st8 st9">Noval</tspan></text>
+	<rect x="149.88" y="347.51" class="st17" width="21.63" height="21.63"/>
+	<circle class="st14" cx="196.18" cy="358.32" r="12.6"/>
+	<polygon class="st23" points="240.45,346.87 227.23,346.87 220.62,358.32 227.23,369.77 240.45,369.77 247.06,358.32 	"/>
+	<g class="st24">
+		<path class="st7" d="M87.26,381.41c9.43-0.39,18.87-0.55,28.3-0.83l28.3-0.47c9.43-0.21,18.87-0.16,28.3-0.24l28.3-0.15l28.3,0.15
+			c9.43,0.08,18.87,0.04,28.3,0.24l28.3,0.47c9.43,0.28,18.87,0.45,28.3,0.83v0.2l-113.2,0.1l-113.2-0.1V381.41z"/>
+	</g>
+	<rect x="88.55" y="392.12" class="st17" width="21.63" height="21.63"/>
+	<circle class="st14" cx="139.14" cy="402.43" r="12.6"/>
+	<rect x="171.3" y="391.61" class="st17" width="21.63" height="21.63"/>
+	<polygon class="st23" points="227.23,389.83 214.01,389.83 207.4,401.28 214.01,412.73 227.23,412.73 233.84,401.28 	"/>
+	<circle class="st14" cx="265.44" cy="400.13" r="12.6"/>
+	<polygon class="st23" points="306.23,388.68 293.01,388.68 286.4,400.13 293.01,411.58 306.23,411.58 312.84,400.13 	"/>
+	<rect x="128.29" y="431.93" class="st17" width="21.63" height="21.63"/>
+	<circle class="st14" cx="99.33" cy="442.75" r="12.6"/>
+	<rect x="209.77" y="431.93" class="st17" width="21.63" height="21.63"/>
+	<path class="st23" d="M182.08,430.15L182.08,430.15c-4.09,0-7.87,2.18-9.91,5.72l0,0c-2.05,3.54-2.05,7.91,0,11.45l0,0
+		c2.05,3.54,5.82,5.72,9.91,5.72h0c4.09,0,7.87-2.18,9.91-5.72h0c2.05-3.54,2.05-7.91,0-11.45h0
+		C189.95,432.33,186.17,430.15,182.08,430.15z"/>
+	<circle class="st14" cx="299.58" cy="442.75" r="12.6"/>
+	<polygon class="st23" points="272.02,431.3 258.8,431.3 252.19,442.75 258.8,454.2 272.02,454.2 278.63,442.75 	"/>
+	<g class="st24">
+		<path class="st7" d="M157.86,387.54c0.41,2.84,0.63,5.69,0.78,8.53c0.16,2.84,0.2,5.69,0.22,8.53c-0.02,2.84-0.06,5.69-0.22,8.53
+			c-0.15,2.84-0.36,5.69-0.78,8.53c-0.42-2.84-0.63-5.69-0.78-8.53c-0.16-2.84-0.2-5.69-0.22-8.53c0.02-2.84,0.06-5.69,0.22-8.53
+			C157.23,393.22,157.44,390.38,157.86,387.54z"/>
+	</g>
+	<g class="st24">
+		<path class="st7" d="M243.3,385.87c0.41,2.84,0.63,5.69,0.78,8.53c0.16,2.84,0.2,5.69,0.22,8.53c-0.02,2.84-0.06,5.69-0.22,8.53
+			c-0.15,2.84-0.36,5.69-0.78,8.53c-0.42-2.84-0.63-5.69-0.78-8.53c-0.16-2.84-0.2-5.69-0.22-8.53c0.02-2.84,0.06-5.69,0.22-8.53
+			C242.67,391.56,242.89,388.72,243.3,385.87z"/>
+	</g>
+	<g class="st24">
+		<path class="st7" d="M157.82,425.68c0.41,2.84,0.63,5.69,0.78,8.53c0.16,2.84,0.2,5.69,0.22,8.53c-0.02,2.84-0.06,5.69-0.22,8.53
+			c-0.15,2.84-0.36,5.69-0.78,8.53c-0.42-2.84-0.63-5.69-0.78-8.53c-0.16-2.84-0.2-5.69-0.22-8.53c0.02-2.84,0.06-5.69,0.22-8.53
+			C157.19,431.37,157.41,428.53,157.82,425.68z"/>
+	</g>
+	<g class="st24">
+		<path class="st7" d="M243.27,427.96c0.41,2.84,0.63,5.69,0.78,8.53c0.16,2.84,0.2,5.69,0.22,8.53c-0.02,2.84-0.06,5.69-0.22,8.53
+			c-0.15,2.84-0.36,5.69-0.78,8.53c-0.42-2.84-0.63-5.69-0.78-8.53c-0.16-2.84-0.2-5.69-0.22-8.53c0.02-2.84,0.06-5.69,0.22-8.53
+			C242.64,433.65,242.86,430.8,243.27,427.96z"/>
+	</g>
+</g>
+<g id="图层_4">
+	<path class="st25" d="M706.16,470.23H424.09c-9.39,0-17.01-7.61-17.01-17.01V288.6c0-9.39,7.61-17.01,17.01-17.01h282.07
+		c9.39,0,17.01,7.61,17.01,17.01v164.62C723.16,462.62,715.55,470.23,706.16,470.23z"/>
+	<text transform="matrix(1 0 0 1 455.7163 302.6866)" class="st7 st8 st9">One-Way Partial AUC Optimization</text>
+	<text transform="matrix(1 0 0 1 455.9959 330.6228)"><tspan x="0" y="0" class="st14 st8 st9">Yang, et al, TPAMI 21 / </tspan><tspan x="154.03" y="0" class="st7 st8 st9">Noval</tspan></text>
+	<g>
+		<g>
+			<rect x="449.14" y="359.81" class="st26" width="111.55" height="20.28"/>
+			<g>
+				<line class="st27" x1="455.65" y1="369.85" x2="468.67" y2="369.85"/>
+				<line class="st27" x1="462.16" y1="363.25" x2="462.16" y2="376.27"/>
+			</g>
+			<line class="st28" x1="476.7" y1="369.76" x2="489.07" y2="369.76"/>
+			<g>
+				<line class="st27" x1="497.21" y1="369.95" x2="510.23" y2="369.95"/>
+				<line class="st27" x1="503.72" y1="363.34" x2="503.72" y2="376.36"/>
+			</g>
+			<g>
+				<line class="st27" x1="518.47" y1="369.95" x2="531.5" y2="369.95"/>
+				<line class="st27" x1="524.99" y1="363.34" x2="524.99" y2="376.36"/>
+			</g>
+			<line class="st28" x1="541.8" y1="369.95" x2="554.17" y2="369.95"/>
+		</g>
+		<g>
+			<rect x="570.39" y="359.62" class="st26" width="111.55" height="20.28"/>
+			<line class="st28" x1="576.86" y1="369.57" x2="589.23" y2="369.57"/>
+			<line class="st28" x1="597.48" y1="369.57" x2="609.85" y2="369.57"/>
+			<g>
+				<line class="st27" x1="618.64" y1="369.66" x2="631.66" y2="369.66"/>
+				<line class="st27" x1="625.15" y1="363.06" x2="625.15" y2="376.08"/>
+			</g>
+			<g>
+				<line class="st27" x1="639.47" y1="369.66" x2="652.49" y2="369.66"/>
+				<line class="st27" x1="645.98" y1="363.06" x2="645.98" y2="376.08"/>
+			</g>
+			<g>
+				<line class="st27" x1="662.04" y1="369.66" x2="675.06" y2="369.66"/>
+				<line class="st27" x1="668.55" y1="363.06" x2="668.55" y2="376.08"/>
+			</g>
+		</g>
+		<line class="st29" x1="451.08" y1="445.02" x2="684.27" y2="445.02"/>
+		<path class="st29" d="M451.08,396.84v48.18c0,0,26.17-30.92,29.91-34.72c17.25-17.58,33.64-19.64,47.96-3.47
+			c13.39,15.11,21.84,31.64,36.68,26.26c13.36-4.85,26.81-44.24,49.26-42.37c13.61,1.13,25.29,19.26,37.11,30.65
+			c10.29,9.92,31.25,22.35,31.25,22.35"/>
+		<path class="st30" d="M452.93,444.15c0,0,20.45-24.14,27.3-31.77c6.54-7.29,18.65-16.46,28.15-15.76
+			c3.61,0.27,8.93,1.41,13.51,4.88c5.86,4.45,10.36,10.33,13.13,14c4.96,6.56,25.66,28.65,25.66,28.65H452.93z"/>
+		<path class="st31" d="M560.68,444.14l-14.56-15.81c0,0,6.83,6.65,13.21,6.65c7.83,0,11.39-3.8,14.11-6.78
+			c5.28-5.81,10.15-13.21,12.86-16.87c3.16-4.27,8.14-10.31,13.02-14.11c4.96-3.85,9.5-6,14.27-5.64c3.61,0.27,6.99,0.58,13.34,5.44
+			c9.17,7.03,14.77,14.85,17.91,18.21c6.4,6.84,8.16,8.74,14.21,13.29c10.38,7.8,22.34,15.12,23.13,15.6c0.01,0.01,0,0.03-0.01,0.03
+			H560.69C560.69,444.15,560.68,444.15,560.68,444.14z"/>
+	</g>
+</g>
+</svg>
