@@ -1,16 +1,559 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Github Page demo</title>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>XCurve</title>
+    <!-- SEO Meta Tags-->
+    <meta name="description" content="Around - Multipurpose Bootstrap Template">
+    <meta name="keywords" content="bootstrap, business, consulting, coworking space, services, creative agency, dashboard, e-commerce, mobile app showcase, multipurpose, product landing, shop, software, ui kit, web studio, landing, html5, css3, javascript, gallery, slider, touch, creative">
+    <meta name="author" content="Createx Studio">
+    <!-- Viewport-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="index.js"></script>
-</head>
-<body>
-    <div id="main-content">
-
+    <!-- Favicon and Touch Icons-->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" color="#5bbad5" href="safari-pinned-tab.svg">
+    <link rel="stylesheet" media="screen" href="css/timeline.css">
+    <meta name="msapplication-TileColor" content="#766df4">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Page loading styles-->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-family: 'Inter', sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #737491;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #766df4;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      
+    </style>
+    <!-- Page loading scripts-->
+    <script src="./marked.js"></script>
+    <script>
+      (function () {
+        window.onload = function () {
+          var preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 100);
+        };
+      })();
+    </script>
+    <!-- Vendor Styles-->
+    <link rel="stylesheet" media="screen" href="vendor/simplebar/dist/simplebar.min.css"/>
+    <link rel="stylesheet" media="screen" href="vendor/tiny-slider/dist/tiny-slider.css"/>
+    <!-- Main Theme Styles + Bootstrap-->
+    <link rel="stylesheet" media="screen" href="css/theme.min.css">
+    <!-- Google Tag Manager-->
+    <script>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-WKV3GT5');
+    </script>
+  </head>
+  <!-- Body-->
+  <body>
+    <!-- Google Tag Manager (noscript)-->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WKV3GT5" height="0" width="0" style="display: none; visibility: hidden;"></iframe>
+    </noscript>
+    <!-- Page loading spinner-->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
     </div>
-</body>
+    <main class="page-wrapper">
+
+      <header class="header navbar navbar-expand-lg navbar-light bg-light navbar-sticky">
+        <div class="navbar-search bg-light">
+          <div class="container d-flex flex-nowrap align-items-center"><i class="ai-search fs-xl"></i>
+            <input class="form-control form-control-xl navbar-search-field" type="text" placeholder="Search site">
+            <div class="d-flex align-items-center"><span class="text-muted fs-xs mt-1 d-none d-sm-inline">Close</span>
+              <button class="btn-close p-2" type="button" data-bs-toggle="search"></button>
+            </div>
+          </div>
+        </div>
+        <div class="container px-0 px-xl-3">
+          <button class="navbar-toggler ms-n2 me-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#primaryMenu"><span class="navbar-toggler-icon"></span></button><a class="navbar-brand flex-shrink-0 order-lg-1 mx-auto ms-lg-0 pe-lg-2 me-lg-4" href="index.html"><img class="d-none d-lg-block" src="img/logo/Xcurve-logo.png" alt="XCurve" width="153"><img class="d-lg-none" src="img/logo/Xcurve-logo.png" alt="XCurve" width="58"></a>
+          <!--<div class="d-flex align-items-center order-lg-3 ms-lg-auto"><a class="btn btn-primary d-lg-inline-block d-none" href="demo-personal-portfolio.html#modal-contact" data-bs-toggle="modal">Contact Us</a><a class="btn btn-sm btn-primary d-lg-none d-inline-block" href="demo-personal-portfolio.html#modal-contact" data-bs-toggle="modal">Contact Us</a></div>-->
+          <div class="offcanvas offcanvas-collapse order-lg-2" id="primaryMenu">
+            <div class="offcanvas-header navbar-shadow">
+              <h5 class="mt-1 mb-0">Menu</h5>
+              <button class="btn-close lead" type="button" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <!-- Menu-->
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown dropdown-mega active"><a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item dropdown dropdown-mega"><a class="nav-link dropdown-toggle" href="tutorials.html">Documentation</a>
+                </li>
+                <!--<li class="nav-item dropdown dropdown-mega"><a class="nav-link dropdown-toggle" href="doc_dataset.html">Documentation</a>
+                </li>-->
+                <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Benchmarks</a> -->
+                  <!-- <ul class="dropdown-menu">
+                    <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Research</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="dashboard-orders.html">Our Researchs</a></li>
+                        <li><a class="dropdown-item" href="dashboard-sales.html">Our Code</a></li>
+                        <li><a class="dropdown-item" href="dashboard-messages.html">Lastest Messages</a></li>
+                      </ul>
+                    </li>
+                    <li><a class="dropdown-item" href="signin-illustration.html">Datasets</a></li>
+                    <li><a class="dropdown-item" href="signin-signup.html">Others</a></li>
+                  </ul> -->
+                <!-- </li> -->
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="datasets.html" >Datasets</a>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="research.html">Research</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="about.html#" >Team</a>
+                  <!-- <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="about.html">About</a></li> -->
+                    <!-- <li class="dropdown"><a class="dropdown-item dropdown-toggle" href="demo-personal-portfolio.html#" data-bs-toggle="dropdown">Github</a>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="contacts-v1.html">Contacts v.1</a></li>
+                        <li><a class="dropdown-item" href="contacts-v2.html">Contacts v.2</a></li>
+                        <li><a class="dropdown-item" href="contacts-v3.html">Contacts v.3</a></li>
+                      </ul>
+                    </li> -->
+                    <!-- <li><a class="dropdown-item" href="lastest_news.html#">Latest News</a></li>
+                  </ul> -->
+                </li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="lastest_news.html">Latest News</a></li>
+                <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="https://github.com/statusrank/XCurve">Github</a>
+                  <!--<ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="https://github.com/statusrank/XCurve/blob/master/README.md">
+                        <div class="d-flex align-items-center">
+                          <div class="fs-xl text-muted"><i class="ai-file-text"></i></div>
+                          <div class="ps-3"><span class="d-block text-heading">Documentation</span><small class="d-block text-muted">Kick-start customization</small></div>
+                        </div></a></li>
+                    <li class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="docs/changelog.html">
+                        <div class="d-flex align-items-center">
+                          <div class="fs-xl text-muted"><i class="ai-edit"></i></div>
+                          <div class="ps-3"><span class="d-block text-heading">Changelog<span class="badge bg-success ms-2">v2.4.0</span></span><small class="d-block text-muted">Regular updates</small></div>
+                        </div></a></li>
+                  </ul>-->
+                </li>
+              </ul>
+            </div>
+            <div class="offcanvas-footer"><a class="btn d-block w-100 btn-primary" href="demo-personal-portfolio.html#modal-contact" data-bs-toggle="modal">Contact Us</a></div>
+          </div>
+        </div>
+      </header>
+
+      <section class="bg-secondary mt-n4 mb-6 mt-lg-0 mb-lg-7 p-5" style="background-image: url(img/index/logo_A2.png);  background-size: cover;">
+        <!-- <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center" style="background-color: #f0f0f7;"> -->
+        <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center">
+          <h1 class="display-7" style="color: #fff;">XCurve: Machine Learning with Decision-Invariant Metrics</h1>
+          <p class="lead fw-normal" style="color: #fff; font-size: x-large;">End-to-end Training Solutions for Decision-Invariant Models </p>
+          <a class="btn btn-translucent-primary me-3" href="https://pypi.org/project/XCurve/#" style="color: #fff;">
+            Download</a>
+            <!--<a class="btn btn-translucent-primary me-3" href="https://github.com/statusrank/XCurve/blob/master/README.md" style="color: #fff;">
+              Documentation</a>-->
+      </div>
+      <div class="position-relative overflow-hidden text-center">
+        <span style="color: #fff;"> 
+          [2023-07]
+          <a href="lastest_news.html" style="color: #fff;">
+            <u>XCurve 1.1.0 is released!</u></span>
+          </a>
+      </div>
+      </section>
+
+      <section class="container mb-3 my-md-0">
+        <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+            <div class="px-4   text-center">
+              <h4 class="display-4 fw-bold" style="font-size: xx-large;">Difficulties in High-Stake Decision-Making</h4>
+            </div>
+            <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+              <p class="lead" style="font-size: large; text-align: justify;">
+                Recently, machine learning and deep learning technologies have been successfully employed in many 
+                complicated 
+                <b><code>high-stake decision-making</code></b>
+                applications such as disease prediction, 
+                fraud detection, outlier detection, and criminal justice sentencing.  
+                All these applications share a common trait known as 
+                <b><code>risk-aversion</code></b>
+                in economics and finance terminologies. In other words, the decision-makers tend 
+                to have an 
+                <b><code>extremely low risk tolerance</code></b>. Under this context, decision-making parameters 
+                will significantly affect the performance of models. For example, in binary classification problems, 
+                we use the so-called classification threshold as the decision parameter. In the following examples, 
+                we see that changing the threshold leads to significantly different model performances.
+              </p>
+            </div>
+            <div class="col-lg-5 p-0 overflow-hidden ">
+                <img class="rounded-lg-3" src="img/index/threshold.png" alt="" width="800">
+            </div>
+        </div>
+      </section>
+
+      <section class="container py-md-6">
+        <div class="row p-4  align-items-center rounded-3 border shadow-lg">
+            <div class="px-4 text-center">
+              <h4 class="display-4 fw-bold" style="font-size: xx-large;">XCurve Framework</h4>
+              <p class="lead" style="font-size: large; text-align: justify;">
+                In risk-aversion problems, the decision parameters change dynamically 
+                in deployment time. Hence, the goal of X-curve learning is to learn high-quality models 
+                that can adapt to different decision conditions. Inspired by the fundamental principle of 
+                the well-known AUC optimization, our library provides a systematic solution to optimize 
+                the area under different kinds of performance curves. To be more specific, the performance 
+                curve is formed by a plot of two performance functions $x(\lambda), y(\lambda)$ of decision 
+                parameter $\lambda$. The area under a performance curve becomes the integral of the performance 
+                over all possible choices of different decision conditions. In this way, the learning systems are 
+                only required to optimize a decision-invariant metric to avoid the risk aversion issue.
+              </p>
+            </div>
+            <img class="rounded-lg-3" src="img/index/xcurve.png" alt="" width="500">
+        </div>
+      </section>
+
+      <section class="container mb-3 my-md-0 pb-5">
+        <div class="row p-4  align-items-center rounded-3 border shadow-lg" style="text-align: center;">
+          <h4 class="display-4 fw-bold" style="font-size: xx-large; margin-top: 3%; margin-bottom: 3%;">Four Kinds of Performance Curves</h4>
+          <div class=" text-center">
+              <div class="container px-5">
+                <img src="img/index/xcurve-insight.png" class="img-fluid mb-4" alt="Example image" loading="lazy" height="500">
+              </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-faded-primary position-relative py-md-7 py-5">
+        <div class="container my-2 my-md-0">
+          <div class="row align-items-center md-6">
+            <h1 class="text-center">Outline</h1>
+            <h4 class="text-center">
+              The core functions of this library includes the following contents
+            </h4>
+          </div>
+
+          <div class="row align-items-center md-6" style="text-align: center; width: 100%"">
+            <div style="margin-left: 15%; margin-right: 5%; width: 80%">
+              <img class="framework" src="img/logo/xcurve_5.png" width="100%">
+            </div>
+            <!-- <div id="markdown" style="float: right; width: 42%; text-align:left">
+              <h3 class="text-muted">XCurve focuses on the design criteria of the objective function for ML tasks, 
+                which can be formulated as a series of X-metric (say AUROC, AUPRC, AUTKC) optimization problems 
+                considering the average performance of all decision thresholds during the training phase.
+              </h3>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="shape shape-top shape-curve bg-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+            <path fill="currentColor" d="M3000,185.4V0H0v185.4C496.4,69.8,996.4,12,1500,12S2503.6,69.8,3000,185.4z"></path>
+          </svg>
+        </div>
+      </section>
+<!-- 
+      <section class="bg-secondary py-5 mt-n4 mb-6 mt-lg-0 mb-lg-7">
+        <div class="container py-3">
+          <h2>Latest News</h2>
+          <div class="row">
+            <div class="timeline2-centered">
+                <div class="timeline2-entry">
+                    <div class="timeline2-entry-inner">
+                        <div class="timeline2-icon bg-info">
+                            <i class="fa fa-tint"></i>
+                        </div>
+                        <div class="timeline2-label">
+                            <h2>
+                                <a href="lastest_news.html">
+                                    <strong>Early access</strong>
+                                </a>
+                                <span>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2022.</span>
+                            </h2>
+                            <p>Our paper "Optimizing Two-way Partial AUC with an End-to-end Framework" is accepted by TPAMI 2022!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline2-entry">
+                    <div class="timeline2-entry-inner">
+                        <div class="timeline2-icon bg-info">
+                            <i class="fa fa-suitcase"></i>
+                        </div>
+                        <div class="timeline2-label">
+                            <h2>
+                                <a href="lastest_news.html">
+                                    <strong>Accepted</strong>
+                                </a>
+                                <span>International Conference on Machine Learning, 2022.</span>
+                            </h2>
+                            <p>Our paper "AdAUC: End-to-end Adversarial AUC Optimization Against Long-tail Problems" is accepted by ICML 2022!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline2-entry begin">
+                    <div class="timeline2-entry-inner">
+                        <div class="timeline2-icon">
+                            <i class="fa fa-plus" style="color: #cccccc;position: relative;top: 3px;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- Portfolio-->
+      
+      
+      <!-- Testimonials-->
+      <!-- <section class="bg-faded-primary position-relative py-md-7 py-5">
+        <div class="row"> -->
+          <!-- <div class="col-md-8 m-auto" style="padding-bottom: 40px; padding-left: 140px;">
+            <input class="col-md-3" value="Search" style="height: 40px;"></input>
+            <select class="col-md-3" value="Type" style="height: 40px;">
+              <option>Conference paper</option>
+              <option>Journal article</option>
+            </select>
+            <select class="col-md-3" value="Year" style="height: 40px;">
+              <option>2022</option>
+              <option>2021</option>
+              <option>2020</option>
+              <option>2019</option>
+            </select>
+          </div> -->
+          <!-- <div class="container">
+            <h2 class="mb-3 text-center">Latest Researches</h2>
+          </div> -->
+
+          <!-- <div class="col-md-10 m-auto">
+            <ul>
+              <li>
+                <div class="row">
+                  <div class="col-md-8">
+                    <a><h3>Rethinking Collaborative Metric Learning: Toward an Efficient Alternative without Negative Sampling</h3></a>
+                    <h5 class="text-muted">Shilong Bao, Qianqian Xu, Zhiyong Yang, Xiaochun Cao, Qingming Huang. Transaction on Pattern
+                      Analysis and Machine
+                      Intelligence, 2022.</h5>
+                    <p>The recently proposed Collaborative Metric Learning (CML) paradigm has aroused wide interest in the area of recommendation systems (RS) owing to its simplicity and effectiveness.</p>
+                  </div>
+                  <div class="col-md-3 m-auto">
+                    <img src="./img/paper/RT.png">
+                  </div>
+                </div>
+              </li>
+              <li>
+                <div class="row">
+                  <div class="col-md-8">
+                    <a><h3>Learning with Multiclass AUC: Theory and Algorithms</h3></a>
+                    <h5 class="text-muted">Zhiyong Yang, Qianqian Xu, Shilong Bao, Xiaochun Cao, Qingming Huang. Transaction on Pattern
+                      Analysis and Machine
+                      Intelligence, 2021.</h5>
+                    <p>The Area under the ROC curve (AUC) is a well-known ranking metric for problems such as imbalanced learning and recommender systems.</p>
+                  </div>
+                  <div class="col-md-3 m-auto">
+                    <img src="./img/paper/MAUC.png">
+                  </div>
+                </div>
+              </li>
+              <li>
+                <a><h3>When All We Need is a Piece of the Pie: A Generic Framework for Optimizing Two-way Partial AUC</h3></a>
+                <h5 class="text-muted">Zhiyong Yang, Qianqian Xu, Shilong Bao, Yuan He, Xiaochun Cao, Qingming Huang. International Conference on Machine Learning, 2021.</h5>
+                <p>The Area Under the ROC Curve (AUC) is a crucial metric for machine learning, which evaluates the average performance over all possible True Positive Rates (TPRs) and False Positive Rates (FPRs). </p>
+              </li>
+            </ul>
+          </div>
+        </div> -->
+        <!-- <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-7 order-md-1 order-2">
+
+              
+              <div class="tns-carousel-wrapper">
+                <h2>Our Research</h2>
+                <div class="tns-carousel-inner" data-carousel-options="{&quot;gutter&quot;: 20, &quot;responsive&quot;: {&quot;0&quot;: {&quot;nav&quot;: true, &quot;controls&quot;: false}, &quot;991&quot;: {&quot;nav&quot;: false, &quot;controls&quot;: true}}}">
+                  
+                  <blockquote class="blockquote mt-3 mb-0">
+                  
+                    <p>The Area Under the ROC Curve (AUC) is a crucial metric for machine learning, which evaluates the average performance over all possible True Positive Rates (TPRs) and False Positive Rates (FPRs). Based on the knowledge that a skillful classifier should simultaneously embrace a high TPR and a low FPR, we turn to study a more general variant called Two-way Partial AUC (TPAUC)</p>
+                    <p>Moreover, a recent work shows that the TPAUC is essentially inconsistent with the existing Partial AUC metrics where only the FPR range is restricted, opening a new problem to seek solutions to leverage high TPAUC.</p>
+                    <footer class="d-flex align-items-center"><img class="rounded-circle" src="img/demo/personal-portfolio/testimonials/01.jpg" alt="Tim Brooks" width="42">
+                      <div class="text-heading fs-md fw-medium ps-2 ms-1">Yang ZhiYong</div>
+                    </footer>
+                  </blockquote>
+                  
+                  <blockquote class="blockquote mt-3 mb-0">
+                    <p>The Area Under the ROC Curve (AUC) is a crucial metric for machine learning, which evaluates the average performance over all possible True Positive Rates (TPRs) and False Positive Rates (FPRs). Based on the knowledge that a skillful classifier should simultaneously embrace a high TPR and a low FPR, we turn to study a more general variant called Two-way Partial AUC (TPAUC)</p>
+                    <p>Moreover, a recent work shows that the TPAUC is essentially inconsistent with the existing Partial AUC metrics where only the FPR range is restricted, opening a new problem to seek solutions to leverage high TPAUC.</p>
+                    <footer class="d-flex align-items-center"><img class="rounded-circle" src="img/demo/personal-portfolio/testimonials/02.jpg" alt="Tim Brooks" width="42">
+                      <div class="text-heading fs-md fw-medium ps-2 ms-1">Bao ShiLong</div>
+                    </footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-5 offset-lg-1 order-md-2 order-1 mb-md-0 mb-grid-gutter"><img class="d-block mx-md-0 mx-auto" src="img/demo/personal-portfolio/testimonials/illustration.png" alt="Illustration"></div>
+          </div>
+        </div> -->
+        <!-- <div class="shape shape-bottom shape-curve bg-body">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 185.4">
+            <path fill="currentColor" d="M3000,0v185.4H0V0c496.4,115.6,996.4,173.4,1500,173.4S2503.6,115.6,3000,0z"></path>
+          </svg>
+        </div>
+      </section> -->
+
+      <!-- Socials-->
+      <!-- <section class="position-relative py-6 bg-no-repeat bg-position-center-bottom overflow-hidden" style="background-image: url(img/demo/personal-portfolio/socials/bg-shape.png);"> -->
+        <!-- Parallax-->
+        <!-- <div class="parallax">
+          <div class="parallax-layer" data-depth="0.1"><img src="img/demo/personal-portfolio/socials/figure-1.png" alt="Layer 1"></div>
+          <div class="parallax-layer" data-depth="0.15"><img src="img/demo/personal-portfolio/socials/figure-2.png" alt="Layer 2"></div>
+          <div class="parallax-layer" data-depth="0.25"><img src="img/demo/personal-portfolio/socials/figure-3.png" alt="Layer 3"></div>
+        </div> -->
+        <!-- Content-->
+        <!-- <div class="d-flex align-items-center position-absolute w-100 h-100" style="top: 0; left: 0; z-index: 9">
+          <div class="container">
+            <h2 class="mb-4 pb-sm-3 text-center">Follow us</h2>
+            <div class="text-center"><a class="btn btn-lg text-white mb-2 me-sm-4 me-2" href="https://github.com/statusrank/XCurve" style="background-color: #ea4c89;"><i class="ai-dribbble lead me-2"></i>Github</a><a class="btn btn-lg text-white mb-2" href="demo-personal-portfolio.html#" style="background-color: #1969ff"><i class="ai-behance lead me-2"></i>Other</a></div>
+          </div>
+        </div>
+      </section> -->
+      
+    </main>
+    <!-- Footer-->
+    <footer class="footer bg-dark pt-5 pt-md-6">
+      <div class="container pt-3 pt-md-0">
+        <div class="row pb-3">
+          <div class="col-md-4 mt-n2 pb-3 pb-md-0 mb-4"><a class="d-block mb-3" href="index.html" style="width: 153px;"><img src="img/logo/Xcurve-logo-trans.png" alt="Around"></a>
+            <p class="fs-sm text-light opacity-60 pb-2 pb-sm-3">We are working on building a python library to make it easy for researchers to optimize curve-related models. </p>
+          </div>
+          <div class="col-md-2 col-sm-4 ms-auto pb-1 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Quick start</h4>
+              <ul>
+                <li><a class="widget-link" href="index.html#">Home</a></li>
+                <li><a class="widget-link" href="tutorials.html#">Documentation</a></li>
+                <!--<li><a class="widget-link" href="doc_dataset.html#">Documentation</a></li>-->
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 pb-1 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Other Links</h4>
+              <ul>
+                <li><a class="widget-link" href="https://github.com/statusrank/XCurve">Github</a></li>
+                <li><a class="widget-link" href="https://pypi.org/project/XCurve/#">Pypi</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-4 mb-4">
+            <div class="widget widget-light">
+              <h4 class="widget-title">Our news</h4>
+              <ul>
+                <li><a class="widget-link" href="lastest_news.html#">Latest papers</a></li>
+                <!--<li><a class="widget-link" href="about.html#">Updates</a></li>-->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <hr class="my-0 border-light">
+        <div class="row align-items-center mt-3 py-4">
+          <div class="col-md-6 order-md-2 text-md-end mb-3">
+            <ul class="list-inline fs-sm mb-0">
+              <li class="list-inline-item"><a class="nav-link-style nav-link-light" href="about.html#">Send email to us</a></li>
+            </ul>
+          </div>
+          <div class="col-md-6 order-md-1 mb-3">
+            <p class="fs-sm mb-0"><span class="text-light opacity-50 me-1">© All rights reserved. Made by XCurve.</span></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to top button<a class="btn-scroll-top" href="demo-personal-portfolio.html#top" data-scroll data-fixed-element><span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span><i class="btn-scroll-top-icon ai-arrow-up">   </i></a>-->
+    <!-- Vendor scrits: js libraries and plugins-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/simplebar/dist/simplebar.min.js"></script>
+    <script src="vendor/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
+    <script src="vendor/tiny-slider/dist/min/tiny-slider.js"></script>
+    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendor/shufflejs/dist/shuffle.min.js"></script>
+    <script src="vendor/parallax-js/dist/parallax.min.js"></script>
+    <!-- Main theme script-->
+    <script src="js/theme.min.js"></script>
+    <script>
+    console.log(document.getElementById("markdown"))
+    document.getElementById('markdown').innerHTML = marked.parse(
+      '# Marked in browser\n\n## Marked in browser\n\n### Marked in browser\n\n#### Marked in browser\n\nRendered by **marked**\n\nRendered by *marked*\n\n + A\n\n + B.'
+    );
+    // document.getElementById('markdown').innerHTML = marked.parse('XCurve focuses on the design criteria of the objective function for ML tasks, which can be formulated as a series of X-metric (say AUROC, AUPRC, AUTKC) optimization problems considering the average performance of all decision thresholds during the training phase.');
+    
+    </script>
+    <script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+    tex2jax: {inlineMath: [['$','$'], ['\(','\)']]}
+    });
+    </script>
+  </body>
 </html>
