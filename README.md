@@ -1,1 +1,0 @@
-# XCurve.github.io
